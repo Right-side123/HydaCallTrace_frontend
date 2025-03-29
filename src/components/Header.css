@@ -1,0 +1,377 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  height: 50px;
+  width: 100%;
+  background-color: #38346c;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.header_content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.header_firstdivlogo {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  width: 65vh;
+}
+
+.header_logout_container {
+  margin-right: 100px;
+  margin-top: 5px;
+  gap: 20px;
+}
+
+.date_time {
+  font-size: 14px;
+  font-weight: 400;
+  color: #fff;
+  margin-top: 15px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.support_button {
+  padding: 8px 25px;
+  background: none;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #ffa444;
+  font-size: 17px;
+}
+
+.logout_button {
+  padding: 8px 15px;
+  background-color: #ffa444;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 17px;
+}
+
+.logout_button:hover {
+  box-shadow: 0 2px 4px #af9d8a;
+}
+
+.header_rightside_logo {
+  width: 130px;
+  height: 50px;
+  background: none;
+}
+
+/*********************** *************************               Support          ********************* *****************************/
+
+.support_button {
+  position: relative;
+  z-index: 1;
+}
+
+.support_page {
+  position: fixed;
+  top: 5.3%;
+  left: 70%;
+  z-index: 2;
+  width: 25%;
+  height: 30%;
+  display: none;
+  background-color: #f4faff;
+}
+
+.support_page {
+  display: block;
+  border-radius: 5px;
+}
+
+.Support_Container {
+  padding: 25px;
+}
+
+.contact_details_container {
+  line-height: 20px;
+}
+
+.contact_details {
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+  color: #38346c;
+  margin-top: 20px;
+  word-spacing: 2px;
+  font-weight: 600;
+}
+
+.contactdetails_heading {
+  color: #ffa444;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.contact_email {
+  color: #38346c;
+  margin-top: 10px;
+  text-decoration: none;
+  font-size: 20px;
+  margin-left: 2px;
+}
+
+.contact_phone {
+  margin-top: 10px;
+  text-decoration: none;
+  color: #38346c;
+  font-size: 20px;
+}
+
+.contact_phone:hover {
+  color: #ffa444;
+}
+
+.contact_email:hover {
+  color: #ffa444;
+}
+
+.location_details {
+  display: flex;
+}
+
+.location_icon {
+  width: 30px;
+  height: 30px;
+  margin: 20px 10px 0px 0px;
+}
+
+.mail_icon {
+  width: 20px;
+  height: 20px;
+  margin: 10px 10px 0px 5px;
+}
+
+.call_icon {
+  width: 25px;
+  height: 25px;
+  margin: 10px 10px 0px 5px;
+}
+
+.phone_container {
+  gap: 20px;
+}
+
+/* *******************************************************                                      ******************************************************************
+***********************                                                 Adjustments for smaller screens   *****************************************
+*********************************************************                                                       *********************************              ************/
+
+@media (max-width: 1024px) {
+  .header {
+    height: 40px;
+    padding: 5px 15px;
+  }
+
+  .header_firstdivlogo {
+    width: 50vh;
+  }
+
+  .date_time {
+    font-size: 12px;
+    margin-top: 10px;
+  }
+
+  .support_button {
+    padding: 7px 20px;
+    font-size: 14px;
+  }
+
+  .logout_button {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  .header_rightside_logo {
+    width: 90px;
+  }
+}
+
+/* **********************
+*************************************
+************************************************************ */
+
+@media (max-width: 1090px) {
+  .header {
+    height: 35px;
+    padding: 5px 20px;
+  }
+
+  .header_firstdivlogo {
+    width: 50vh;
+    margin-left: 50px;
+  }
+
+  .date_time {
+    font-size: 12px;
+    margin-top: 18px;
+  }
+
+  .support_button {
+    padding: 7px 20px;
+    font-size: 14px;
+  }
+
+  .logout_button {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .header_rightside_logo {
+    width: 90px;
+  }
+
+  .header_logout_container {
+    margin-top: 10px;
+  }
+}
+
+/*           *****************                *******************               ***  *   ***                ***********************             ******************         */
+/* ************************************************                smaller screens like tablets and mobile             *********************************** */
+/*           *****************                *******************               ***  *   ***                ***********************             ******************         */
+
+@media (max-width: 768px) {
+  .header {
+    height: 35px;
+    padding: 5px 10px;
+  }
+
+  .header_firstdivlogo {
+    width: 45vh;
+  }
+
+  .date_time {
+    font-size: 10px;
+    margin-top: 5px;
+  }
+
+  .support_button {
+    padding: 5px 15px;
+    font-size: 12px;
+  }
+
+  .logout_button {
+    padding: 5px 10px;
+    font-size: 10px;
+  }
+
+  .header_rightside_logo {
+    width: 80px;
+  }
+}
+
+/* ******************************************************************************************************************************************************* */
+/************                                           mobile screens (smaller than 480px)                                  ********************* */
+/* ******************************************************************************************************************************************************* */
+
+@media (max-width: 480px) {
+  .header {
+    height: 30px;
+    padding: 5px 8px;
+  }
+
+  .header_firstdivlogo {
+    width: 40vh;
+  }
+
+  .date_time {
+    font-size: 8px;
+    margin-top: 2px;
+  }
+
+  .support_button {
+    padding: 4px 10px;
+    font-size: 10px;
+  }
+
+  .logout_button {
+    padding: 4px 8px;
+    font-size: 8px;
+  }
+
+  .header_rightside_logo {
+    width: 70px;
+  }
+
+  .support_page {
+    position: absolute;
+    top: 5.3%;
+    left: 70%;
+    z-index: 2;
+    width: 25%;
+    height: 30%;
+    display: none;
+    background-color: #f4faff;
+  }
+
+}
+
+
+@media (max-width:750px) and (min-width:300px) {
+  .header {
+    height: 30px;
+    padding: 5px 8px;
+  }
+
+  .header_firstdivlogo {
+    width: 30vh;
+    margin-left: 0px
+  }
+
+  .date_time {
+    font-size: 8px;
+    margin-top: 20px;
+  }
+
+  .support_button {
+    padding: 4px 10px;
+    font-size: 10px;
+    margin-left: -5%
+  }
+
+  .logout_button {
+    padding: 4px 8px;
+    font-size: 8px;
+  }
+
+  .header_rightside_logo {
+    width: 70px;
+  }
+
+  .header_logout_container {
+    margin-right: 30px;
+    margin-top: 10px;
+    gap: 20px;
+  }
+
+
+}
+
+@media (max-width:360px) and (min-width:300px) {
+  .support_button {
+    padding: 4px 10px;
+    font-size: 10px;
+    margin-left: 0%
+  }
+
+  .header_logout_container {
+    margin-right: 0px;
+    margin-top: 10px;
+    gap: 20px;
+    width: 150px;
+  }
+
+}

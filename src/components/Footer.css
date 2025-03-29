@@ -1,0 +1,175 @@
+.page_footer {
+    padding: 5px 40px;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: #38346c;
+    color: #fff;
+    text-align: center;
+    font-size: 12px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+
+body {
+    padding-bottom: 60px;
+}
+
+.page_footer_fixed {
+    margin-top: 8px;
+    font-weight: bold;
+}
+
+.footer_content {
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.icon_container {
+    margin-top: 8px;
+}
+
+.footer_content:hover {
+    color: #ffa444;
+}
+
+.linkedicon,
+.facebookicon {
+    width: 23px;
+    height: 23px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-left: 10px;
+    border-radius: 50%;
+}
+
+.linkedicon:hover,
+.facebookicon:hover {
+    transform: translateY(-5px);
+}
+
+/* *********************                    ***********************************
+                       ************************                                 **************** */
+
+
+
+@media (max-width: 1024px) {
+    .page_footer {
+        padding: 0px 50px;
+        height: 35px;
+        font-size: 10px;
+    }
+
+    .linkedicon {
+        width: 18px;
+        height: 20px;
+    }
+
+    .facebookicon {
+        width: 18px;
+        height: 18px;
+    }
+
+    .footer_content {
+        font-size: 10px;
+    }
+}
+
+
+/* ************************   ****   ****
+************************************************************************ */
+
+
+@media (max-width: 1090px) {
+    .page_footer {
+        padding: 0px 50px;
+        height: 35px;
+        font-size: 10px;
+    }
+
+    .linkedicon {
+        width: 18px;
+        height: 20px;
+    }
+
+    .facebookicon {
+        width: 18px;
+        height: 18px;
+    }
+
+    .footer_content {
+        font-size: 10px;
+    }
+}
+
+
+/* ******************************                                                                                                     **************************** */
+/* *********************************************************For smaller mobile screens with max-width: 768px *********************************************/
+/* ******************************                                                                                                     **************************** */
+
+@media (max-width: 768px) {
+    .page_footer {
+        padding: 0px 25px;
+        height: 30px;
+        font-size: 8px;
+    }
+
+    .linkedicon {
+        width: 16px;
+        height: 16px;
+    }
+
+    .facebookicon {
+        width: 16px;
+        height: 16px;
+    }
+
+    .footer_content {
+        font-size: 8px;
+    }
+}
+
+/* *******************************************                                                                                ********************************************** */
+/* ****************************************************             mobile screens (smaller than 480px)                    ********************************************* */
+/* *******************************************                                                                                ********************************************** */
+
+@media (max-width: 480px) {
+    .page_footer {
+        padding: 0px 15px;
+        height: 30px;
+        font-size: 7px;
+    }
+
+    .linkedicon {
+        width: 14px;
+        height: 14px;
+    }
+
+    .facebookicon {
+        width: 14px;
+        height: 14px;
+    }
+
+    .footer_content {
+        font-size: 7px;
+    }
+}
+
+
+@media (max-width:360px) and (min-width:300px) {
+    .page_footer {
+        padding: 0px 10px;
+        height: 30px;
+        font-size: 7px;
+    }
+
+    .linkedicon,
+    .facebookicon {
+        margin-left: 5px;
+
+    }
+}

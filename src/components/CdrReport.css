@@ -1,0 +1,1688 @@
+.CdrReportPage {
+  padding: 10px;
+  text-align: center;
+  margin-top: -28px;
+  height: 100vh;
+}
+
+.page_heading {
+  font-size: 25px;
+  margin-top: 70px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.total_records {
+  font-size: 15px;
+  color: red;
+}
+
+.date-input-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+input[type="date"] {
+  padding-left: 5px;
+  font-size: 14px;
+  width: 200px;
+}
+
+.cdr_back_dwldbtn {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #ffa444;
+  color: #38346c;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.cdr_back_dwldbtn_back {
+  padding: 8px 25px;
+  font-size: 16px;
+  background-color: #fff;
+  color: #38346c;
+  border: 1.5px solid #ffa444;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px 20px 0px 50px;
+}
+
+.cdr_back_dwldbtn_back:hover {
+  background-color: #ffa444;
+  color: #38346c;
+  box-shadow: 0 2px 4px #af9d8a;
+}
+
+.cdr_back_dwldbtn:hover {
+  box-shadow: 0 2px 4px #af9d8a;
+}
+
+button:disabled {
+  background-color: #d6d6d6;
+  cursor: not-allowed;
+}
+
+.dwldbtn_back {
+  padding: 0px 0px;
+  font-size: 16px;
+  background-color: #fff;
+  color: #38346c;
+  border: 1.5px solid #ffa444;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px 0px 0px 0px;
+}
+
+.dwldbtn_back:hover {
+  background-color: #ffa444;
+  color: #38346c;
+  box-shadow: 0 2px 4px #af9d8a;
+}
+
+.download-button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cdr_buttons_container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-right: 60px;
+}
+
+.error-message {
+  color: red;
+  font-size: 16px;
+}
+
+.buttons-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 0px;
+  margin-left: 89%;
+}
+
+.buttons-container button {
+  padding: 10px 20px;
+  font-size: 14px;
+}
+
+/* ****************    Table Styling    *************************/
+.cdr_table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 5px;
+  background-color: #fffaf3;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+  overflow-y: auto;
+  display: block;
+  border-radius: 10px;
+  padding: 0;
+}
+
+thead th {
+  background-color: #ffa444;
+  color: #303474;
+  font-size: 12px;
+  padding: 12px;
+  text-align: left;
+  border-top: 1px solid #ddd;
+  border-bottom: 2px solid #ddd;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+td {
+  padding: 7px;
+  text-align: center;
+  font-size: 12px;
+  border-bottom: 1px solid #ddd;
+  color: #333;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  word-wrap: break-word;
+  line-height: 20px;
+}
+
+tbody tr:hover {
+  background-color: #cfcfcfb9;
+}
+
+td,
+th {
+  max-width: 180px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+td:first-child,
+th:first-child {
+  width: 50px;
+  text-align: center;
+}
+
+td:last-child,
+th:last-child {
+  width: 150px;
+  text-align: center;
+}
+
+th:nth-child(2),
+td:nth-child(2),
+th:nth-child(3),
+td:nth-child(3),
+th:nth-child(4),
+td:nth-child(4),
+th:nth-child(5),
+td:nth-child(5),
+th:nth-child(6),
+td:nth-child(6),
+th:nth-child(7),
+td:nth-child(7),
+th:nth-child(8),
+td:nth-child(8),
+th:nth-child(9),
+td:nth-child(9),
+th:nth-child(10),
+td:nth-child(10),
+th:nth-child(11),
+td:nth-child(11),
+th:nth-child(12),
+td:nth-child(12),
+th:nth-child(13),
+td:nth-child(13),
+th:nth-child(14),
+td:nth-child(14),
+th:nth-child(15),
+td:nth-child(15),
+th:nth-child(16),
+td:nth-child(16),
+th:nth-child(17),
+td:nth-child(17),
+th:nth-child(18),
+td:nth-child(18),
+th:nth-child(19),
+td:nth-child(19),
+th:nth-child(20),
+td:nth-child(20),
+th:nth-child(21),
+td:nth-child(21),
+th:nth-child(22),
+td:nth-child(22) {
+  width: 120px;
+}
+
+.cdr_tbody {
+  display: table-row-group;
+  max-height: none;
+  overflow-y: visible;
+}
+
+.cdr_table {
+  overflow-x: auto;
+  overflow-y: auto;
+  display: block;
+  max-height: 740px;
+}
+
+.no-data-message {
+  color: red;
+  font-size: 16px;
+  margin-top: 20px;
+  font-weight: 400;
+}
+
+.custom_recording {
+  color: #1773d6;
+}
+
+.modal {
+  display: show;
+}
+
+/* Modal Styling */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 60%;
+  max-width: 600px;
+  text-align: center;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 30px;
+  color: #333;
+  cursor: pointer;
+}
+
+.blurred {
+  filter: blur(5px);
+  pointer-events: none;
+}
+
+.download_btn {
+  background: none;
+  border: none;
+  color: #375ab3;
+  cursor: pointer;
+  font-size: 24px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  padding: 10px;
+  transition: color 0.3s;
+  position: relative;
+}
+
+.download_btn:hover {
+  color: #38346c;
+}
+
+.download_btn::after {
+  content: "Download";
+  position: absolute;
+  top: 40px;
+  left: 20px;
+  border: 1px solid #665e5e;
+  border-radius: 2px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  color: black;
+  font-size: 12px;
+  font-weight: 200;
+  padding: 2px;
+}
+
+.download_btn:hover::after {
+  opacity: 1;
+}
+
+.download-btn:focus {
+  outline: none;
+}
+
+.modelRecordinfHeading {
+  margin-bottom: 10px;
+}
+
+.close_x_btn {
+  margin-left: 95%;
+}
+
+.close_x_btn:hover {
+  background-color: #ff0000;
+  color: #fff;
+}
+
+.select_type {
+  font-size: 1em;
+  font-weight: 400;
+}
+
+.select_option {
+  margin-left: 10px;
+  width: 160px;
+  height: 25px;
+  font-size: 15px;
+  border-radius: 3px;
+}
+
+.select_time {
+  font-size: 15px;
+  height: 25px;
+  margin-left: 10px;
+  border-radius: 3px;
+}
+
+
+/*******     ************************************               Connected Page                 ***********************************   *****/
+
+.connectedpage_heading {
+  font-size: 25px;
+  margin-top: 32px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.ConnectedCdrPage {
+  padding: 11px;
+  text-align: center;
+  margin-top: 9px;
+  height: 100vh;
+}
+
+/**********            *****************************************   Not Connected      *********************************                    ************/
+
+.NotConnectedCdrPage {
+  padding: 12px;
+  text-align: center;
+  height: 100vh;
+}
+
+.notconnectedpage_heading {
+  font-size: 25px;
+  margin-top: 40px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/***************          *************************************       Inbound            ***************************************                 *****************/
+
+.inboundCdrPage {
+  padding: 12px;
+  text-align: center;
+  height: 100vh;
+}
+
+.inboundpage_heading {
+  font-size: 25px;
+  margin-top: 40px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/*********    ********************************************               Outbound                **************************************              **********/
+
+.outboundCdrPage {
+  padding: 12px;
+  text-align: center;
+  height: 100vh;
+}
+
+.outboundpage_heading {
+  font-size: 25px;
+  margin-top: 40px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/**********     ***********************************************                     failed              ******************************                      ***********/
+
+.failedCdrPage {
+  padding: 12px;
+  text-align: center;
+  height: 100vh;
+}
+
+.failedpage_heading {
+  font-size: 25px;
+  margin-top: 40px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/**************          **************************************************                Missed            ******************************              *******************/
+
+.missedpage_heading {
+  font-size: 25px;
+  margin-top: 40px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.missedCdrPage {
+  padding: 12px;
+  text-align: center;
+  height: 100vh;
+}
+
+/**************  *******************************************************                   Single Agent Page                   *********************          *************/
+
+.singleAgent_heading {
+  font-size: 24px;
+  margin-top: 72px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.label_container {
+  margin-bottom: 15px;
+}
+
+/* ******************************************************************************************************************************* */
+/*   ******************                 Media Queries for Responsiveness                     *************************************/
+/* ******************************************************************************************************************************* */
+
+
+@media (max-width: 1024px) {
+  .cdr_buttons_container {
+    margin-right: 30px;
+  }
+
+  .buttons-container {
+    margin-left: 80%;
+  }
+
+  .cdr_table {
+    max-height: 600px;
+  }
+
+  input[type="date"] {
+    width: 180px;
+  }
+}
+
+@media (max-width: 1090px) {
+  .cdr_buttons_container {
+    margin-right: 30px;
+  }
+
+  .page_heading {
+    font-size: 20px;
+  }
+
+  .date-input-container {
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .buttons-container {
+    margin-left: 80%;
+  }
+
+  .cdr_table {
+    max-height: 600px;
+  }
+
+  input[type="date"] {
+    width: 150px;
+  }
+
+  .select_time {
+    width: 110px;
+  }
+
+  .cdr_back_dwldbtn_back {
+    padding: 6px 18px;
+    font-size: 14px;
+  }
+
+  .cdr_back_dwldbtn {
+    padding: 7px 12px;
+    font-size: 14px;
+  }
+
+  .cdr_table {
+    max-height: 420px;
+  }
+
+  td,
+  th {
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  td:first-child,
+  th:first-child {
+    width: 150px;
+    text-align: center;
+  }
+
+  td:last-child,
+  th:last-child {
+    width: 120px;
+    text-align: center;
+  }
+
+  thead th {
+    font-size: 10px;
+    padding: 4px;
+  }
+
+  td {
+    padding: 4px;
+    font-size: 10px;
+    line-height: 16px;
+  }
+
+  .dwldbtn_back {
+    font-size: 10px;
+    height: 30px;
+    width: 60px;
+    margin: 0px 0px 0px 0px;
+  }
+
+  .cdr_back_dwldbtn {
+    font-size: 14px;
+    text-align: center;
+    margin-top: 0px;
+  }
+
+  .CdrReportPage {
+    padding: 10px;
+    text-align: center;
+    margin-top: -40px;
+    height: 93vh;
+  }
+
+  .missedpage_heading {
+    font-size: 20px;
+    margin-top: 30px;
+  }
+
+  .missedCdrPage {
+    padding: 12px;
+    text-align: center;
+    height: 91vh;
+  }
+
+  .connectedpage_heading {
+    font-size: 20px;
+    margin-top: 20px;
+  }
+
+  .ConnectedCdrPage {
+    padding: 11px;
+    text-align: center;
+    margin-top: 9px;
+    height: 92vh;
+  }
+
+  .NotConnectedCdrPage {
+    padding: 12px;
+    text-align: center;
+    height: 91vh;
+  }
+
+  .notconnectedpage_heading {
+    font-size: 20px;
+    margin-top: 30px;
+  }
+
+  .inboundCdrPage {
+    padding: 12px;
+    text-align: center;
+    height: 91vh;
+  }
+
+  .inboundpage_heading {
+    font-size: 20px;
+    margin-top: 30px;
+  }
+
+  .outboundCdrPage {
+    padding: 12px;
+    text-align: center;
+    height: 91vh;
+  }
+
+  .outboundpage_heading {
+    font-size: 20px;
+    margin-top: 30px;
+  }
+
+  .failedCdrPage {
+    padding: 12px;
+    text-align: center;
+    height: 91vh;
+  }
+
+  .failedpage_heading {
+    font-size: 20px;
+    margin-top: 30px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+
+  .select_option {
+    width: 120px;
+  }
+
+  .singleAgent_heading {
+    font-size: 20px;
+    margin-top: 70px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+
+  .label_container {
+    margin-bottom: 15px;
+  }
+}
+
+
+
+@media (max-width: 1190px) {
+
+  .NotConnectedCdrPage {
+    height: 100vh;
+  }
+
+  .ConnectedCdrPage {
+    height: 100vh;
+  }
+
+  .inboundCdrPage {
+    height: 100vh;
+  }
+
+  .outboundCdrPage {
+    height: 100vh;
+  }
+
+  .failedCdrPage {
+    height: 100vh;
+  }
+
+  .missedCdrPage {
+    height: 100vh;
+  }
+
+  .CdrReportPage {
+    padding: 10px;
+    text-align: center;
+    height: 100vh;
+  }
+
+  .cdr_table {
+    max-height: 380px;
+  }
+
+  .page_heading {
+    font-size: 16px;
+  }
+
+  thead th {
+    font-size: 10px;
+    padding: 4px;
+  }
+
+  td {
+    padding: 4px;
+    font-size: 10px;
+    line-height: 16px;
+  }
+
+  .buttons-container {
+    margin-left: 85%;
+  }
+
+  .dwldbtn_back {
+    font-size: 10px;
+    height: 30px;
+    width: 60px;
+    margin: 0px 0px 0px 0px;
+  }
+
+  .cdr_back_dwldbtn {
+    font-size: 14px;
+    text-align: center;
+    margin-top: 0px;
+  }
+
+}
+
+
+@media (max-width: 1290px) {
+
+  .NotConnectedCdrPage {
+    height: 100vh;
+  }
+
+  .ConnectedCdrPage {
+    height: 100vh;
+  }
+
+  .inboundCdrPage {
+    height: 100vh;
+  }
+
+  .outboundCdrPage {
+    height: 100vh;
+  }
+
+  .failedCdrPage {
+    height: 100vh;
+  }
+
+  .missedCdrPage {
+    height: 100vh;
+  }
+
+  .CdrReportPage {
+    padding: 10px;
+    text-align: center;
+    height: 100vh;
+  }
+
+  .cdr_table {
+    max-height: 380px;
+  }
+
+  .page_heading {
+    font-size: 16px;
+  }
+
+  thead th {
+    font-size: 10px;
+    padding: 4px;
+  }
+
+  td {
+    padding: 4px;
+    font-size: 10px;
+    line-height: 16px;
+  }
+
+  .buttons-container {
+    margin-left: 85%;
+  }
+
+  .dwldbtn_back {
+    font-size: 10px;
+    height: 30px;
+    width: 60px;
+    margin: 0px 0px 0px 0px;
+  }
+
+  .cdr_back_dwldbtn {
+    font-size: 14px;
+    text-align: center;
+    margin-top: 0px;
+  }
+
+}
+
+
+
+@media (max-width: 1390px) {
+
+  .NotConnectedCdrPage {
+    height: 100vh;
+  }
+
+  .ConnectedCdrPage {
+    height: 100vh;
+  }
+
+  .inboundCdrPage {
+    height: 100vh;
+  }
+
+  .outboundCdrPage {
+    height: 100vh;
+  }
+
+  .failedCdrPage {
+    height: 100vh;
+  }
+
+  .missedCdrPage {
+    height: 100vh;
+  }
+
+  .CdrReportPage {
+    padding: 10px;
+    text-align: center;
+    height: 100vh;
+  }
+
+  .cdr_table {
+    max-height: 380px;
+  }
+
+  .page_heading {
+    font-size: 16px;
+  }
+
+  thead th {
+    font-size: 10px;
+    padding: 4px;
+  }
+
+  td {
+    padding: 4px;
+    font-size: 10px;
+    line-height: 16px;
+  }
+
+  .buttons-container {
+    margin-left: 85%;
+  }
+
+  .dwldbtn_back {
+    font-size: 10px;
+    height: 30px;
+    width: 60px;
+    margin: 0px 0px 0px 0px;
+  }
+
+  .cdr_back_dwldbtn {
+    font-size: 14px;
+    text-align: center;
+    margin-top: 0px;
+  }
+
+}
+
+
+@media (max-width: 1490px) {
+
+  .NotConnectedCdrPage {
+    height: 100vh;
+  }
+
+  .ConnectedCdrPage {
+    height: 100vh;
+  }
+
+  .inboundCdrPage {
+    height: 100vh;
+  }
+
+  .outboundCdrPage {
+    height: 100vh;
+  }
+
+  .failedCdrPage {
+    height: 100vh;
+  }
+
+  .missedCdrPage {
+    height: 100vh;
+  }
+
+  .CdrReportPage {
+    padding: 10px;
+    text-align: center;
+    height: 100vh;
+  }
+
+  .cdr_table {
+    max-height: 380px;
+  }
+
+  .page_heading {
+    font-size: 16px;
+  }
+
+  thead th {
+    font-size: 10px;
+    padding: 4px;
+  }
+
+  td {
+    padding: 4px;
+    font-size: 10px;
+    line-height: 16px;
+  }
+
+  .buttons-container {
+    margin-left: 85%;
+  }
+
+  .dwldbtn_back {
+    font-size: 10px;
+    height: 30px;
+    width: 60px;
+    margin: 0px 0px 0px 0px;
+  }
+
+  .cdr_back_dwldbtn {
+    font-size: 14px;
+    text-align: center;
+    margin-top: 0px;
+  }
+
+}
+
+
+@media (max-width: 1590px) {
+
+  .NotConnectedCdrPage {
+    height: 100vh;
+  }
+
+  .ConnectedCdrPage {
+    height: 100vh;
+  }
+
+  .inboundCdrPage {
+    height: 100vh;
+  }
+
+  .outboundCdrPage {
+    height: 100vh;
+  }
+
+  .failedCdrPage {
+    height: 100vh;
+  }
+
+  .missedCdrPage {
+    height: 100vh;
+  }
+
+  .CdrReportPage {
+    padding: 10px;
+    text-align: center;
+    height: 100vh;
+  }
+
+  .cdr_table {
+    max-height: 380px;
+  }
+
+  .page_heading {
+    font-size: 16px;
+  }
+
+  thead th {
+    font-size: 10px;
+    padding: 4px;
+  }
+
+  td {
+    padding: 4px;
+    font-size: 10px;
+    line-height: 16px;
+  }
+
+  .buttons-container {
+    margin-left: 85%;
+  }
+
+  .dwldbtn_back {
+    font-size: 10px;
+    height: 30px;
+    width: 60px;
+    margin: 0px 0px 0px 0px;
+  }
+
+  .cdr_back_dwldbtn {
+    font-size: 14px;
+    text-align: center;
+    margin-top: 0px;
+  }
+
+}
+
+
+@media (max-width: 1690px) {
+
+  .NotConnectedCdrPage {
+    height: 100vh;
+  }
+
+  .ConnectedCdrPage {
+    height: 100vh;
+  }
+
+  .inboundCdrPage {
+    height: 100vh;
+  }
+
+  .outboundCdrPage {
+    height: 100vh;
+  }
+
+  .failedCdrPage {
+    height: 100vh;
+  }
+
+  .missedCdrPage {
+    height: 100vh;
+  }
+
+  .CdrReportPage {
+    padding: 10px;
+    text-align: center;
+    height: 100vh;
+  }
+
+  .cdr_table {
+    max-height: 380px;
+  }
+
+  .page_heading {
+    font-size: 16px;
+  }
+
+  thead th {
+    font-size: 10px;
+    padding: 4px;
+  }
+
+  td {
+    padding: 4px;
+    font-size: 10px;
+    line-height: 16px;
+  }
+
+  .buttons-container {
+    margin-left: 85%;
+  }
+
+  .dwldbtn_back {
+    font-size: 10px;
+    height: 30px;
+    width: 60px;
+    margin: 0px 0px 0px 0px;
+  }
+
+  .cdr_back_dwldbtn {
+    font-size: 14px;
+    text-align: center;
+    margin-top: 0px;
+  }
+
+}
+
+@media (max-width: 992px) {
+  .cdr_table {
+    max-height: 550px;
+  }
+
+  input[type="date"] {
+    width: 160px;
+  }
+
+  .buttons-container {
+    margin-left: 70%;
+  }
+}
+
+@media (max-width: 768px) {
+  .cdr_table {
+    max-height: 500px;
+  }
+
+  .date-input-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .buttons-container {
+    margin-left: 50%;
+  }
+
+  .cdr_buttons_container {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+
+  .NotConnectedCdrPage {
+    height: 100vh;
+  }
+
+  .ConnectedCdrPage {
+    height: 100vh;
+  }
+
+  .inboundCdrPage {
+    height: 100vh;
+  }
+
+  .outboundCdrPage {
+    height: 100vh;
+  }
+
+  .failedCdrPage {
+    height: 100vh;
+  }
+
+  .missedCdrPage {
+    height: 100vh;
+  }
+
+  .CdrReportPage {
+    padding: 10px;
+    text-align: center;
+    height: 100vh;
+  }
+
+  .cdr_table {
+    max-height: 720px;
+  }
+
+  .page_heading {
+    font-size: 20px;
+  }
+
+  .select_option {
+    margin-left: 10px;
+    margin-right: 80px;
+  }
+
+  .select_time {
+    margin-left: 18px;
+  }
+
+
+  input[type="date"] {
+    width: 110px;
+  }
+
+  .buttons-container {
+    margin-left: 40%;
+    margin-top: 10px;
+  }
+}
+
+
+@media (max-width: 450px) {
+
+  .NotConnectedCdrPage {
+    height: 100vh;
+  }
+
+  .ConnectedCdrPage {
+    height: 100vh;
+  }
+
+  .inboundCdrPage {
+    height: 100vh;
+  }
+
+  .outboundCdrPage {
+    height: 100vh;
+  }
+
+  .failedCdrPage {
+    height: 100vh;
+  }
+
+  .missedCdrPage {
+    height: 100vh;
+  }
+
+  .CdrReportPage {
+    padding: 10px;
+    text-align: center;
+    height: 100vh;
+  }
+
+  .cdr_table {
+    max-height: 730px;
+  }
+
+  .page_heading {
+    font-size: 20px;
+  }
+
+  .select_option {
+    margin-left: 10px;
+    margin-right: 80px;
+  }
+
+  .select_time {
+    margin-left: 18px;
+  }
+
+
+  input[type="date"] {
+    width: 110px;
+  }
+
+  .buttons-container {
+    margin-left: 40%;
+    margin-top: 10px;
+  }
+
+  .modal-content {
+    width: 90%;
+  }
+}
+
+
+@media (max-width: 430px) {
+
+  .NotConnectedCdrPage {
+    height: 100vh;
+  }
+
+  .ConnectedCdrPage {
+    height: 100vh;
+  }
+
+  .inboundCdrPage {
+    height: 100vh;
+  }
+
+  .outboundCdrPage {
+    height: 100vh;
+  }
+
+  .failedCdrPage {
+    height: 100vh;
+  }
+
+  .missedCdrPage {
+    height: 100vh;
+  }
+
+  .CdrReportPage {
+    padding: 10px;
+    text-align: center;
+    height: 100vh;
+  }
+
+  .cdr_table {
+    max-height: 650px;
+  }
+
+  .page_heading {
+    font-size: 20px;
+  }
+
+  .select_option {
+    margin-left: 10px;
+    margin-right: 80px;
+  }
+
+  .select_time {
+    margin-left: 18px;
+  }
+
+
+  input[type="date"] {
+    width: 110px;
+  }
+
+  .buttons-container {
+    margin-left: 40%;
+    margin-top: 10px;
+  }
+
+  .modal-content {
+    width: 90%;
+  }
+}
+
+
+
+@media (max-width: 420px) {
+
+  .NotConnectedCdrPage {
+    height: 100vh;
+  }
+
+  .ConnectedCdrPage {
+    height: 100vh;
+  }
+
+  .inboundCdrPage {
+    height: 100vh;
+  }
+
+  .outboundCdrPage {
+    height: 100vh;
+  }
+
+  .failedCdrPage {
+    height: 100vh;
+  }
+
+  .missedCdrPage {
+    height: 100vh;
+  }
+
+  .CdrReportPage {
+    padding: 10px;
+    text-align: center;
+    height: 100vh;
+  }
+
+  .cdr_table {
+    max-height: 710px;
+  }
+
+  .page_heading {
+    font-size: 20px;
+  }
+
+  .select_option {
+    margin-left: 10px;
+    margin-right: 80px;
+  }
+
+  .select_time {
+    margin-left: 18px;
+  }
+
+
+  input[type="date"] {
+    width: 110px;
+  }
+
+  .buttons-container {
+    margin-left: 40%;
+    margin-top: 10px;
+  }
+
+  .modal-content {
+    width: 90%;
+  }
+}
+
+@media (max-width: 400px) {
+
+  .NotConnectedCdrPage {
+    height: 100vh;
+  }
+
+  .ConnectedCdrPage {
+    height: 100vh;
+  }
+
+  .inboundCdrPage {
+    height: 100vh;
+  }
+
+  .outboundCdrPage {
+    height: 100vh;
+  }
+
+  .failedCdrPage {
+    height: 100vh;
+  }
+
+  .missedCdrPage {
+    height: 100vh;
+  }
+
+  .CdrReportPage {
+    padding: 10px;
+    text-align: center;
+    height: 100vh;
+  }
+
+  .cdr_table {
+    max-height: 660px;
+  }
+
+  .page_heading {
+    font-size: 20px;
+  }
+
+  .select_option {
+    margin-left: 10px;
+    margin-right: 80px;
+  }
+
+  .select_time {
+    margin-left: 18px;
+  }
+
+
+  input[type="date"] {
+    width: 110px;
+  }
+
+  .buttons-container {
+    margin-left: 40%;
+    margin-top: 10px;
+  }
+
+  .modal-content {
+    width: 90%;
+  }
+}
+
+
+@media (max-width: 380px) {
+
+  .NotConnectedCdrPage {
+    height: 100vh;
+  }
+
+  .ConnectedCdrPage {
+    height: 100vh;
+  }
+
+  .inboundCdrPage {
+    height: 100vh;
+  }
+
+  .outboundCdrPage {
+    height: 100vh;
+  }
+
+  .failedCdrPage {
+    height: 100vh;
+  }
+
+  .missedCdrPage {
+    height: 100vh;
+  }
+
+
+  .CdrReportPage {
+    padding: 10px;
+    text-align: center;
+    height: 100vh;
+  }
+
+  .cdr_table {
+    max-height: 480px;
+  }
+
+  .page_heading {
+    font-size: 20px;
+    margin-top: 65px;
+  }
+
+  .select_option {
+    margin-left: 10px;
+    margin-right: 80px;
+  }
+
+  .select_time {
+    margin-left: 18px;
+  }
+
+
+  input[type="date"] {
+    width: 110px;
+  }
+
+  .buttons-container {
+    margin-left: 40%;
+    margin-top: 10px;
+  }
+
+  .modal-content {
+    width: 90%;
+  }
+}
+
+@media (max-width: 360px) {
+
+  .NotConnectedCdrPage {
+    height: 100vh;
+  }
+
+  .ConnectedCdrPage {
+    height: 100vh;
+  }
+
+  .inboundCdrPage {
+    height: 100vh;
+  }
+
+  .outboundCdrPage {
+    height: 100vh;
+  }
+
+  .failedCdrPage {
+    height: 100vh;
+  }
+
+  .missedCdrPage {
+    height: 100vh;
+  }
+
+  .CdrReportPage {
+    padding: 10px;
+    text-align: center;
+    height: 100vh;
+  }
+
+  .cdr_table {
+    max-height: 460px;
+  }
+
+  .page_heading {
+    font-size: 20px;
+    margin-top: 60px;
+  }
+
+  .select_option {
+    margin-left: 10px;
+    margin-right: 80px;
+  }
+
+  .select_time {
+    margin-left: 18px;
+  }
+
+
+  input[type="date"] {
+    width: 110px;
+  }
+
+  .buttons-container {
+    margin-left: 40%;
+    margin-top: 10px;
+  }
+
+  .modal-content {
+    width: 90%;
+  }
+}
+
+@media (max-width: 345px) {
+
+  .NotConnectedCdrPage {
+    height: 100vh;
+  }
+
+  .ConnectedCdrPage {
+    height: 100vh;
+  }
+
+  .inboundCdrPage {
+    height: 100vh;
+  }
+
+  .outboundCdrPage {
+    height: 100vh;
+  }
+
+  .failedCdrPage {
+    height: 100vh;
+  }
+
+  .missedCdrPage {
+    height: 100vh;
+  }
+
+  .CdrReportPage {
+    padding: 10px;
+    text-align: center;
+    height: 100vh;
+  }
+
+  .cdr_table {
+    max-height: 680px;
+  }
+
+  .page_heading {
+    font-size: 20px;
+    margin-top: 90px;
+  }
+
+  .select_option {
+    margin-left: 10px;
+    margin-right: 80px;
+  }
+
+  .select_time {
+    margin-left: 18px;
+  }
+
+
+  input[type="date"] {
+    width: 110px;
+  }
+
+  .buttons-container {
+    margin-left: 40%;
+    margin-top: 10px;
+  }
+
+  .modal-content {
+    width: 90%;
+  }
+}
+
+
+@media (max-width: 340px) {
+  .NotConnectedCdrPage,
+  .ConnectedCdrPage,
+  .inboundCdrPage,
+  .outboundCdrPage,
+  .failedCdrPage,
+  .missedCdrPage {
+    height: 770px;
+  }
+
+  .CdrReportPage {
+    padding: 10px;
+    text-align: center;
+    height: 770px;
+  }
+
+  .cdr_table {
+    max-height: 590px;
+  }
+
+  .page_heading {
+    font-size: 18px;
+    margin-top: 80px;
+  }
+
+  .select_option {
+    margin-left: 8px;
+    margin-right: 70px;
+  }
+
+  .select_time {
+    margin-left: 15px;
+  }
+
+  input[type="date"] {
+    width: 100px;
+  }
+
+  .buttons-container {
+    margin-left: 35%;
+    margin-top: 10px;
+  }
+
+  .modal-content {
+    width: 85%;
+  }
+}

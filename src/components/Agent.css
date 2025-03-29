@@ -1,0 +1,1375 @@
+/* body {
+  overflow-y: auto;
+  overflow-x: auto;
+} */
+
+.agent-container {
+  width: 98%;
+  margin: 10px auto;
+  font-family: Arial, sans-serif;
+  height: 79vh;
+  overflow-y: auto;
+  overflow-x: auto
+}
+
+.agent_back {
+  padding: 6px 10px;
+  font-size: 16px;
+  background-color: #fff;
+  color: #38346c;
+  border: 1.5px solid #ffa444;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px 20px 0px 50px;
+}
+
+.agent_back:hover {
+  background-color: #ffa444;
+  color: #38346c;
+  box-shadow: 0 2px 4px #af9d8a;
+}
+
+.top_fields {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 15px;
+  gap: 10%;
+}
+
+.select_type {
+  font-size: 1em;
+  font-weight: 400;
+  margin-left: 15px;
+}
+
+.select_option {
+  margin-left: 10px;
+  width: 160px;
+  height: 25px;
+  font-size: 15px;
+  border-radius: 3px;
+}
+
+.select_option_time {
+  font-size: 15px;
+  height: 25px;
+  margin-left: 10px;
+  border-radius: 3px;
+}
+
+.searchbox {
+  margin-left: 10px;
+  width: 200px;
+  height: 25px;
+  font-size: 15px;
+  border-radius: 3px;
+}
+
+.agent_dwldbtn {
+  padding: 6px 8px;
+  font-size: 16px;
+  background-color: #ffa444;
+  color: #38346c;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.agent_dwldbtn:hover {
+  box-shadow: 0 2px 4px #af9d8a;
+}
+
+.buttons_container {
+  display: flex;
+  gap: 5px;
+  margin-top: 0px;
+}
+
+.agent-content {
+  padding: 10px;
+  background-color: #fffaf3;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  line-height: 10px;
+  margin-top: 10px;
+}
+
+.agents-table .tdregion {
+  padding: 2px;
+  width: 20%;
+}
+
+.agentpage_heading {
+  margin-top: 50px;
+  text-align: center;
+  color: #333;
+}
+
+.agents-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.agents-table th,
+.agents-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.agents-table th {
+  background-color: #ffa444;
+  color: #38346c;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.agents-table td {
+  font-size: 12px;
+  color: #333;
+}
+
+.agents-table tr:hover {
+  background-color: #b6b6b6;
+  cursor: pointer;
+}
+
+p {
+  font-size: 1em;
+  text-align: center;
+  color: #333;
+}
+
+.agents-table td[colspan="4"] {
+  text-align: center;
+  font-style: italic;
+  color: #888;
+}
+
+.clickable-row:hover {
+  background-color: #a8aaad;
+}
+
+/* *********************************************************************************************************************************************************** */
+/* ********************************************                                 Tablet and smaller screens                                      ***************************** */
+/* *********************************************************************************************************************************************************** */
+
+@media (max-width: 1024px) {
+  .agent-container {
+    height: 73vh;
+  }
+
+  .searchbox {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .agent_back {
+    padding: 6px 10px;
+    font-size: 14px;
+    margin: 10px 15px;
+  }
+
+  .top_fields {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 5%;
+  }
+
+  .select_option,
+  .select_option_time {
+    width: 120px;
+    font-size: 14px;
+  }
+
+  .agent_dwldbtn {
+    padding: 6px 8px;
+    font-size: 14px;
+  }
+
+  .agent-content {
+    padding: 10px;
+    margin-top: 10px;
+  }
+
+  .agents-table th,
+  .agents-table td {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .agents-table {
+    margin-top: 15px;
+  }
+}
+
+
+/* ***************************************** 1090 ************************* */
+
+
+@media (max-width: 1090px) {
+  .agent-container {
+    height: 64vh;
+  }
+
+  .searchbox {
+    width: 120px;
+    font-size: 14px;
+  }
+
+  .agent_back {
+    padding: 0px 10px;
+    height: 30px;
+    font-size: 12px;
+    margin-left: 85vw;
+  }
+
+  .top_fields {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 3%;
+  }
+
+  .select_option,
+  .select_option_time {
+    width: 100px;
+    font-size: 14px;
+  }
+
+  .agent_dwldbtn {
+    padding: 0px 6px;
+    height: 30px;
+    font-size: 12px;
+  }
+
+  .agent-content {
+    padding: 0px;
+    margin-top: 10px;
+  }
+
+  .agents-table th,
+  .agents-table td {
+    font-size: 10px;
+    padding: 4px;
+  }
+
+  .agents-table {
+    margin-top: 10px;
+  }
+
+  .select_type {
+    font-size: 1em;
+    font-weight: 400;
+    margin-left: 15px;
+  }
+
+  .select_option {
+    margin-left: 10px;
+    width: 120px;
+    height: 25px;
+    font-size: 12px;
+    border-radius: 3px;
+  }
+}
+
+/* @media (max-width: 576px) {
+  .agent-container {
+    height: 64vh;
+  }
+
+  .searchbox {
+    width: 120px;
+    font-size: 14px;
+  }
+
+  .agent_back {
+    padding: 0px 10px;
+    height: 30px;
+    font-size: 12px;
+    margin-left: 85vw;
+  }
+
+  .top_fields {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 3%;
+  }
+
+  .select_option,
+  .select_option_time {
+    width: 100px;
+    font-size: 14px;
+  }
+
+  .agent_dwldbtn {
+    padding: 0px 6px;
+    height: 30px;
+    font-size: 12px;
+  }
+
+  .agent-content {
+    padding: 0px;
+    margin-top: 10px;
+  }
+
+  .agents-table th,
+  .agents-table td {
+    font-size: 10px;
+    padding: 4px;
+  }
+
+  .agents-table {
+    margin-top: 10px;
+  }
+
+  .select_type {
+    font-size: 1em;
+    font-weight: 400;
+    margin-left: 15px;
+  }
+
+  .select_option {
+    margin-left: 10px;
+    width: 120px;
+    height: 25px;
+    font-size: 12px;
+    border-radius: 3px;
+  }
+} */
+
+
+/* @media (max-width: 450px) {
+  .agent-container {
+
+    height: 70vh;
+  }
+
+  .searchbox {
+    width: 70%;
+    margin-top: 5px;
+  }
+
+  .agent_back {
+    padding: 0px 10px;
+    height: 30px;
+    font-size: 12px;
+    margin-left: 40vw;
+  }
+
+  .select_option {
+    width: 100px;
+    font-size: 14px;
+    margin-right: 0px;
+  }
+
+  .select_option_time {
+    margin-left: -30px;
+  }
+
+  .agent_dwldbtn {
+    padding: 0px 6px;
+    height: 30px;
+    font-size: 12px;
+  }
+
+  .agent-content {
+    padding: 0px;
+    margin-top: 0px;
+  }
+
+  .agents-table {
+    margin-top: 0px;
+  }
+
+  .select_type {
+    margin-left: 25px;
+  }
+
+  .select_option {
+    margin-left: 10px;
+  }
+} */
+
+/* @media (max-width: 400px) {
+  .agent-container {
+    overflow-x: auto;
+    overflow-y: auto;
+    height: 67vh;
+  }
+
+  .searchbox {
+    width: 70%;
+    margin-top: 5px;
+  }
+
+  .agent_back {
+    padding: 0px 10px;
+    height: 30px;
+    font-size: 12px;
+    margin-left: 40vw;
+  }
+
+  .select_option {
+    width: 100px;
+    font-size: 14px;
+    margin-right: 0px;
+  }
+
+  .select_option_time {
+    margin-left: -30px;
+  }
+
+  .agent_dwldbtn {
+    padding: 0px 6px;
+    height: 30px;
+    font-size: 12px;
+  }
+
+  .agent-content {
+    padding: 0px;
+    margin-top: 0px;
+  }
+
+  .agents-table {
+    margin-top: 0px;
+  }
+
+  .select_type {
+    margin-left: 25px;
+  }
+
+  .select_option {
+    margin-left: 10px;
+  }
+} */
+
+
+/* @media (max-width: 380px) {
+  .agent-container {
+    */
+/* height: 59vh;
+  }
+
+  .searchbox {
+    width: 70%;
+    margin-top: 5px;
+  }
+
+  .agent_back {
+    padding: 0px 10px;
+    height: 30px;
+    font-size: 12px;
+    margin-left: 40vw;
+  }
+
+  .select_option {
+    width: 100px;
+    font-size: 14px;
+    margin-right: 0px;
+  }
+
+  .select_option_time {
+    margin-left: -30px;
+  }
+
+  .agent_dwldbtn {
+    padding: 0px 6px;
+    height: 30px;
+    font-size: 12px;
+  }
+
+  .agent-content {
+    padding: 0px;
+    margin-top: 0px;
+  }
+
+  .agents-table {
+    margin-top: 0px;
+  }
+
+  .select_type {
+    margin-left: 25px;
+  }
+
+  .select_option {
+    margin-left: 10px;
+  }
+} */
+
+
+/* @media (max-width: 360px) {
+  .agent-container {
+  
+    height: 63vh;
+  }
+
+  .searchbox {
+    width: 70%;
+    margin-top: 5px;
+  }
+
+  .agent_back {
+    padding: 0px 10px;
+    height: 30px;
+    font-size: 12px;
+    margin-left: 40vw;
+  }
+
+  .select_option {
+    width: 100px;
+    font-size: 14px;
+    margin-right: 0px;
+  }
+
+  .select_option_time {
+    margin-left: -60px;
+  }
+
+  .agent_dwldbtn {
+    padding: 0px 6px;
+    height: 30px;
+    font-size: 12px;
+  }
+
+  .agent-content {
+    padding: 0px;
+    margin-top: 0px;
+  }
+
+  .agents-table {
+    margin-top: 0px;
+  }
+
+  .select_type {
+    margin-left: 25px;
+  }
+
+  .select_option {
+    margin-left: 10px;
+  }
+} */
+
+
+/* @media (max-width: 345px) {
+  .agent-container {
+    height: 69vh;
+  }
+
+  .searchbox {
+    width: 70%;
+    margin-top: 5px;
+  }
+
+  .agent_back {
+    padding: 0px 10px;
+    height: 30px;
+    font-size: 12px;
+    margin-left: 40vw;
+  }
+
+  .select_option {
+    width: 100px;
+    font-size: 14px;
+    margin-right: 0px;
+  }
+
+  .select_option_time {
+    margin-left: -70px;
+  }
+
+  .agent_dwldbtn {
+    padding: 0px 6px;
+    height: 30px;
+    font-size: 12px;
+  }
+
+  .agent-content {
+    padding: 0px;
+    margin-top: 0px;
+  }
+
+  .agents-table {
+    margin-top: 0px;
+  }
+
+  .select_type {
+    margin-left: 25px;
+  }
+
+  .select_option {
+    margin-left: 10px;
+  }
+} */
+
+
+
+@media (max-width: 1290px) {
+  .agent-container {
+    height: 59vh;
+  }
+
+  .searchbox {
+    width: 200px;
+    font-size: 14px;
+  }
+
+  .agent_back {
+    padding: 0px 10px;
+    height: 30px;
+    font-size: 12px;
+    margin-left: 85vw;
+  }
+
+  .top_fields {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 3%;
+  }
+
+  .select_option,
+  .select_option_time {
+    width: 100px;
+    font-size: 14px;
+  }
+
+  .agent_dwldbtn {
+    padding: 0px 6px;
+    height: 30px;
+    font-size: 12px;
+  }
+
+  .agent-content {
+    padding: 0px;
+    margin-top: 10px;
+  }
+
+  .agents-table th,
+  .agents-table td {
+    font-size: 10px;
+    padding: 4px;
+  }
+
+  .agents-table {
+    margin-top: 0px;
+  }
+
+  .select_type {
+    font-size: 1em;
+    font-weight: 400;
+    margin-left: 5px;
+  }
+
+  .select_option {
+    margin-left: 0px;
+    width: 120px;
+    height: 25px;
+    font-size: 12px;
+    border-radius: 3px;
+  }
+}
+
+
+@media (max-width: 1390px) {
+  .agent-container {
+    height: 59vh;
+  }
+
+  .searchbox {
+    width: 200px;
+    font-size: 14px;
+  }
+
+  .agent_back {
+    padding: 0px 10px;
+    height: 30px;
+    font-size: 12px;
+    margin-left: 85vw;
+  }
+
+  .top_fields {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 3%;
+  }
+
+  .select_option,
+  .select_option_time {
+    width: 100px;
+    font-size: 14px;
+  }
+
+  .agent_dwldbtn {
+    padding: 0px 6px;
+    height: 30px;
+    font-size: 12px;
+  }
+
+  .agent-content {
+    padding: 0px;
+    margin-top: 10px;
+  }
+
+  .agents-table th,
+  .agents-table td {
+    font-size: 10px;
+    padding: 4px;
+  }
+
+  .agents-table {
+    margin-top: 0px;
+  }
+
+  .select_type {
+    font-size: 1em;
+    font-weight: 400;
+    margin-left: 5px;
+  }
+
+  .select_option {
+    margin-left: 0px;
+    width: 120px;
+    height: 25px;
+    font-size: 12px;
+    border-radius: 3px;
+  }
+}
+
+
+@media (max-width: 1490px) {
+  .agent-container {
+    height: 59vh;
+  }
+
+  .searchbox {
+    width: 200px;
+    font-size: 14px;
+  }
+
+  .agent_back {
+    padding: 0px 10px;
+    height: 30px;
+    font-size: 12px;
+    margin-left: 85vw;
+  }
+
+  .top_fields {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 3%;
+  }
+
+  .select_option,
+  .select_option_time {
+    width: 100px;
+    font-size: 14px;
+  }
+
+  .agent_dwldbtn {
+    padding: 0px 6px;
+    height: 30px;
+    font-size: 12px;
+  }
+
+  .agent-content {
+    padding: 0px;
+    margin-top: 10px;
+  }
+
+  .agents-table th,
+  .agents-table td {
+    font-size: 10px;
+    padding: 4px;
+  }
+
+  .agents-table {
+    margin-top: 0px;
+  }
+
+  .select_type {
+    font-size: 1em;
+    font-weight: 400;
+    margin-left: 5px;
+  }
+
+  .select_option {
+    margin-left: 0px;
+    width: 120px;
+    height: 25px;
+    font-size: 12px;
+    border-radius: 3px;
+  }
+}
+
+@media (max-width: 1590px) {
+  .agent-container {
+    height: 59vh;
+  }
+
+  .searchbox {
+    width: 200px;
+    font-size: 14px;
+  }
+
+  .agent_back {
+    padding: 0px 10px;
+    height: 30px;
+    font-size: 12px;
+    margin-left: 85vw;
+  }
+
+  .top_fields {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 3%;
+  }
+
+  .select_option,
+  .select_option_time {
+    width: 100px;
+    font-size: 14px;
+  }
+
+  .agent_dwldbtn {
+    padding: 0px 6px;
+    height: 30px;
+    font-size: 12px;
+  }
+
+  .agent-content {
+    padding: 0px;
+    margin-top: 10px;
+  }
+
+  .agents-table th,
+  .agents-table td {
+    font-size: 10px;
+    padding: 4px;
+  }
+
+  .agents-table {
+    margin-top: 0px;
+  }
+
+  .select_type {
+    font-size: 1em;
+    font-weight: 400;
+    margin-left: 5px;
+  }
+
+  .select_option {
+    margin-left: 0px;
+    width: 120px;
+    height: 25px;
+    font-size: 12px;
+    border-radius: 3px;
+  }
+}
+
+
+@media (max-width: 1690px) {
+  .agent-container {
+    height: 59vh;
+  }
+
+  .searchbox {
+    width: 200px;
+    font-size: 14px;
+  }
+
+  .agent_back {
+    padding: 0px 10px;
+    height: 30px;
+    font-size: 12px;
+    margin-left: 85vw;
+  }
+
+  .top_fields {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 3%;
+  }
+
+  .select_option,
+  .select_option_time {
+    width: 100px;
+    font-size: 14px;
+  }
+
+  .agent_dwldbtn {
+    padding: 0px 6px;
+    height: 30px;
+    font-size: 12px;
+  }
+
+  .agent-content {
+    padding: 0px;
+    margin-top: 10px;
+  }
+
+  .agents-table th,
+  .agents-table td {
+    font-size: 10px;
+    padding: 4px;
+  }
+
+  .agents-table {
+    margin-top: 0px;
+  }
+
+  .select_type {
+    font-size: 1em;
+    font-weight: 400;
+    margin-left: 5px;
+  }
+
+  .select_option {
+    margin-left: 0px;
+    width: 120px;
+    height: 25px;
+    font-size: 12px;
+    border-radius: 3px;
+  }
+}
+
+
+@media (max-width:360px) and (min-width:300px) {
+  .agent-container {
+    width: 98%;
+    margin: 0px auto;
+    height: 69vh;
+    overflow-y: auto;
+    overflow-x: auto
+  }
+  
+  .agent_back {
+    font-size: 16px;
+    margin: 10px 20px 0px 50px;
+  }
+  
+  .top_fields {
+    margin-top: 10px;
+  }
+  
+  .select_type {
+    margin-left: 10px;
+    
+  }
+  
+  .select_option {
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+  
+  .select_option_time {
+    margin-left: -60px;
+  }
+  
+  .searchbox {
+    margin-left: 30px;
+    width: 200px;
+    height: 25px;
+    font-size: 15px;
+    margin-top: 10px;
+    border-radius: 3px;
+  }
+  
+  .agent_dwldbtn {
+    padding: 6px 8px;
+    font-size: 16px;
+    background-color: #ffa444;
+    color: #38346c;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .agent-content {
+    padding: 10px;
+    line-height: 10px;
+    margin-top: 10px;
+    overflow-x: auto;
+  }
+  
+  
+  .agentpage_heading {
+    margin-top: 50px;
+    text-align: center;
+    color: #333;
+  }
+  
+  .agents-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    border-radius: 5px;
+  }
+  
+  .agents-table th,
+  .agents-table td {
+    padding: 8px;
+  }
+  
+  .agents-table th {
+    font-size: 12px;
+    font-weight: 600;
+  }
+  
+  .agents-table td {
+    font-size: 12px;
+    color: #333;
+  }
+  
+  .agents-table tr:hover {
+    background-color: #b6b6b6;
+    cursor: pointer;
+  }
+  
+
+  .agents-table td[colspan="4"] {
+    text-align: center;
+    font-style: italic;
+    color: #888;
+  }
+  
+  .clickable-row:hover {
+    background-color: #a8aaad;
+  }
+  
+}
+
+
+
+@media (max-width:380px) and (min-width:360px) {
+  .agent-container {
+    width: 98%;
+    margin: 0px auto;
+    height: 55vh;
+    overflow-y: auto;
+    overflow-x: auto
+  }
+  
+  .agent_back {
+    font-size: 16px;
+    margin: 10px 20px 0px 50px;
+  }
+  
+  .top_fields {
+    margin-top: 0px;
+  }
+  
+  .select_type {
+    margin-left: 20px;
+    
+  }
+  
+  .select_option {
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+  
+  .select_option_time {
+    margin-left: -40px;
+  }
+  
+  .searchbox {
+    margin-left: 30px;
+    width: 200px;
+    height: 25px;
+    font-size: 15px;
+    margin-top: 10px;
+    border-radius: 3px;
+  }
+  
+  .agent_dwldbtn {
+    padding: 6px 8px;
+    font-size: 16px;
+    background-color: #ffa444;
+    color: #38346c;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .agent-content {
+    padding: 10px;
+    line-height: 10px;
+    margin-top: 10px;
+    overflow-x: auto;
+  }
+  
+  
+  .agentpage_heading {
+    margin-top: 30px;
+    text-align: center;
+    color: #333;
+  }
+  
+  .agents-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0px;
+    border-radius: 5px;
+  }
+  
+  .agents-table th,
+  .agents-table td {
+    padding: 8px;
+  }
+  
+  .agents-table th {
+    font-size: 12px;
+    font-weight: 600;
+  }
+  
+  .agents-table td {
+    font-size: 12px;
+    color: #333;
+  }
+  
+  .agents-table tr:hover {
+    background-color: #b6b6b6;
+    cursor: pointer;
+  }
+  
+
+  .agents-table td[colspan="4"] {
+    text-align: center;
+    font-style: italic;
+    color: #888;
+  }
+  
+  .clickable-row:hover {
+    background-color: #a8aaad;
+  }
+  
+}
+
+
+
+@media (max-width:420px) and (min-width:380px) {
+  .agent-container {
+    width: 98%;
+    margin: 0px auto;
+    height: 70vh;
+    overflow-y: auto;
+    overflow-x: auto
+  }
+  
+  .agent_back {
+    font-size: 16px;
+    margin: 10px 20px 0px 50px;
+  }
+  
+  .top_fields {
+    margin-top: 0px;
+  }
+  
+  .select_type {
+    margin-left: 20px;
+    
+  }
+  
+  .select_option {
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+  
+  .select_option_time {
+    margin-left: -25px;
+  }
+  
+  .searchbox {
+    margin-left: 30px;
+    width: 200px;
+    height: 25px;
+    font-size: 15px;
+    margin-top: 10px;
+    border-radius: 3px;
+  }
+  
+  .agent_dwldbtn {
+    padding: 6px 8px;
+    font-size: 16px;
+    background-color: #ffa444;
+    color: #38346c;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .agent-content {
+    padding: 10px;
+    line-height: 10px;
+    margin-top: 10px;
+    overflow-x: auto;
+  }
+  
+  
+  .agentpage_heading {
+    margin-top: 50px;
+    text-align: center;
+    color: #333;
+  }
+  
+  .agents-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    border-radius: 5px;
+  }
+  
+  .agents-table th,
+  .agents-table td {
+    padding: 8px;
+  }
+  
+  .agents-table th {
+    font-size: 12px;
+    font-weight: 600;
+  }
+  
+  .agents-table td {
+    font-size: 12px;
+    color: #333;
+  }
+  
+  .agents-table tr:hover {
+    background-color: #b6b6b6;
+    cursor: pointer;
+  }
+  
+
+  .agents-table td[colspan="4"] {
+    text-align: center;
+    font-style: italic;
+    color: #888;
+  }
+  
+  .clickable-row:hover {
+    background-color: #a8aaad;
+  }
+  
+}
+
+
+@media (max-width:450px) and (min-width:420px) {
+  .agent-container {
+    width: 98%;
+    margin: 0px auto;
+    height: 72vh;
+    overflow-y: auto;
+    overflow-x: auto
+  }
+  
+  .agent_back {
+    font-size: 16px;
+    margin: 10px 20px 0px 50px;
+  }
+  
+  .top_fields {
+    margin-top: 0px;
+  }
+  
+  .select_type {
+    margin-left: 20px;
+    
+  }
+  
+  .select_option {
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+  
+  .select_option_time {
+    margin-left: 0px;
+  }
+  
+  .searchbox {
+    margin-left: 30px;
+    width: 200px;
+    height: 25px;
+    font-size: 15px;
+    margin-top: 10px;
+    border-radius: 3px;
+  }
+  
+  .agent_dwldbtn {
+    padding: 6px 8px;
+    font-size: 16px;
+    background-color: #ffa444;
+    color: #38346c;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .agent-content {
+    padding: 10px;
+    line-height: 10px;
+    margin-top: 10px;
+    overflow-x: auto;
+  }
+  
+  
+  .agentpage_heading {
+    margin-top: 40px;
+    text-align: center;
+    color: #333;
+  }
+  
+  .agents-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0px;
+    border-radius: 5px;
+  }
+  
+  .agents-table th,
+  .agents-table td {
+    padding: 8px;
+  }
+  
+  .agents-table th {
+    font-size: 12px;
+    font-weight: 600;
+  }
+  
+  .agents-table td {
+    font-size: 12px;
+    color: #333;
+  }
+  
+  .agents-table tr:hover {
+    background-color: #b6b6b6;
+    cursor: pointer;
+  }
+  
+
+  .agents-table td[colspan="4"] {
+    text-align: center;
+    font-style: italic;
+    color: #888;
+  }
+  
+  .clickable-row:hover {
+    background-color: #a8aaad;
+  }
+  
+}
