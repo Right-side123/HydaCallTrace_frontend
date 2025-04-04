@@ -242,18 +242,16 @@ function CdrReportPage() {
                                 <th>Customer-Number</th>
                                 <th>Agent-Name</th>
                                 <th>Agent-Number</th>
-                                <th>Agent-Dial-Start</th>
-                                <th>Agent-Answered-At</th>
-                                <th>Agent-Disconnected-At</th>
-                                <th>Agent-Duration</th>
-                                <th>Customer-Duration</th>
-                                <th>Customer-Dial-Start</th>
-                                <th>Customer-Answered-At</th>
-                                <th>Customer-Disconnected-At</th>
-                                <th>Agent-Disposition</th>
-                                <th>Customer-Disposition</th>
+                                <th>Call-Start</th>
+                                <th>Call-End</th>
+                                <th>Destination-Number</th>
+                                <th>Duration</th>
+                                <th>Call-Wait-Time</th>
+                                <th>Bill-Sec</th>
+                                <th>Hangup-Cause</th>
+                                <th>Circle</th>
+                                <th>SIM-Number</th>
                                 <th>Recording...</th>
-                                <th>API-Response</th>
                             </tr>
                         </thead>
                         <tbody className='cdr_tbody'>
@@ -264,21 +262,19 @@ function CdrReportPage() {
                                     <td>{cdr.calltype}</td>
                                     <td>{cdr.custphone}</td>
                                     <td>{cdr.agentname}</td>
-                                    <td>{cdr.agent}</td>
-                                    <td>{formatDate(cdr.agent_dial_start)}</td>
-                                    <td>{formatDate(cdr.agent_answered_at)}</td>
-                                    <td>{formatDate(cdr.agent_disconnected_at)}</td>
-                                    <td>{cdr.agent_duration}</td>
-                                    <td>{cdr.customer_duration}</td>
-                                    <td>{formatDate(cdr.customer_dial_start)}</td>
-                                    <td>{formatDate(cdr.customer_answered_at)}</td>
-                                    <td>{formatDate(cdr.customer_disconnected_at)}</td>
-                                    <td>{cdr.agent_disposition}</td>
-                                    <td>{cdr.customer_disposition}</td>
+                                    <td>{cdr.agent_no}</td>
+                                    <td>{formatDate(cdr.call_start_time)}</td>
+                                    <td>{formatDate(cdr.call_end_time)}</td>
+                                    <td>{cdr.dst_no}</td>
+                                    <td>{cdr.duration}</td>
+                                    <td>{formatDate(cdr.call_wait_time)}</td>
+                                    <td>{formatDate(cdr.bill_sec)}</td>
+                                    <td>{cdr.hangup_cause}</td>
+                                    <td>{cdr.circle}</td>
+                                    <td>{cdr.SIM_number}</td>
                                     <td onClick={() => handleRecordingClick(cdr.recording_file)} className='custom_recording'>
                                         {cdr.recording_file}
                                     </td>
-                                    <td>{cdr.api_response}</td>
                                 </tr>
                             ))}
                         </tbody>
