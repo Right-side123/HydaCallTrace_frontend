@@ -247,9 +247,9 @@ function CdrReportPage() {
                                 <th>Destination-Number</th>
                                 <th>Duration</th>
                                 <th>Call-Wait-Time</th>
-                                <th>Bill-Sec</th>
+                                <th> Bill-Sec</th>
                                 <th>Hangup-Cause</th>
-                                <th>Circle</th>
+                                <th> Circle</th>
                                 <th>SIM-Number</th>
                                 <th>Recording...</th>
                             </tr>
@@ -267,8 +267,8 @@ function CdrReportPage() {
                                     <td>{formatDate(cdr.call_end_time)}</td>
                                     <td>{cdr.dst_no}</td>
                                     <td>{cdr.duration}</td>
-                                    <td>{formatDate(cdr.call_wait_time)}</td>
-                                    <td>{formatDate(cdr.bill_sec)}</td>
+                                    <td>{cdr.call_wait_time}</td>
+                                    <td>{cdr.bill_sec}</td>
                                     <td>{cdr.hangup_cause}</td>
                                     <td>{cdr.circle}</td>
                                     <td>{cdr.SIM_number}</td>
