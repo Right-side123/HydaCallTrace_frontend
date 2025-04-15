@@ -283,8 +283,8 @@ function InboundCallsPage() {
                                     <td>{cdr.call_type}</td>
                                     <td>{cdr.overall_call_status}</td>
                                     <td>{cdr.agentname}</td>
-                                    <td>{cdr.caller_id}</td>
                                     <td>{cdr.destination_number}</td>
+                                    <td>{cdr.caller_id}</td>
                                     <td>{cdr.customer_name}</td>
                                     <td>{formatDate(cdr.date)}</td>
                                     <td>{cdr.time}</td>
