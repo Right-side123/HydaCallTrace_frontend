@@ -243,19 +243,6 @@ const AddAgent = () => {
                                 required
                             />
                         </div>
-                        <div>
-                            <label className='content_heding'>Agent Mobile: </label>
-                            <input
-                                className='agent_input'
-                                type="text"
-                                value={agentmobile}
-                                onChange={(e) => setAgentmobile(e.target.value)}
-                                required
-                            />
-                        </div>
-                    </div>
-
-                    <div className='agent_name_container'>
 
                         <div>
                             <label className='content_heding'>IMEI No: </label>
@@ -267,6 +254,23 @@ const AddAgent = () => {
                                 required
                             />
                         </div>
+
+                    </div>
+
+                    <div className='agent_name_container'>
+
+                        <div>
+                            <label className='content_heding_mobile'>Agent Mobile: </label>
+                            <input
+                                className='agent_input'
+                                type="text"
+                                value={agentmobile}
+                                onChange={(e) => setAgentmobile(e.target.value)}
+                                required
+                            />
+                        </div>
+
+
 
                         <div>
                             <label className='content_heding'>SIM No: </label>
@@ -284,7 +288,7 @@ const AddAgent = () => {
 
                     <div className='agent_name_container'>
                         <div>
-                            <label className='content_heding'>Department: </label>
+                            <label className='content_heding_dpt'>Department: </label>
                             <input
                                 className='agent_input'
                                 type="text"

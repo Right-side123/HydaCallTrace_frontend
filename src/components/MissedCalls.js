@@ -196,7 +196,7 @@ function MissedCallsPage() {
 
                 {showDateSelector && (
                     <div className="date-input-container">
-                        <div>
+                        <div className='container2'>
                             <label className='select_type'>Start Date:</label>
                             <input
                                 className='select_option'
@@ -204,8 +204,7 @@ function MissedCallsPage() {
                                 value={startDate}
                                 onChange={(e) => setStartDate(e.target.value)}
                             />
-                        </div>
-                        <div>
+
                             <input
                                 className='select_time'
                                 type="time"
@@ -213,8 +212,11 @@ function MissedCallsPage() {
                                 onChange={(e) => setStartTime(e.target.value)}
                             />
                         </div>
+                        {/* <div>
 
-                        <div>
+                        </div> */}
+
+                        <div className='container2'>
                             <label className='select_type'>End Date:</label>
                             <input
                                 className='select_option'
@@ -222,8 +224,7 @@ function MissedCallsPage() {
                                 value={endDate}
                                 onChange={(e) => setEndDate(e.target.value)}
                             />
-                        </div>
-                        <div>
+
                             <input
                                 className='select_time'
                                 type="time"
@@ -231,6 +232,9 @@ function MissedCallsPage() {
                                 onChange={(e) => setEndTime(e.target.value)}
                             />
                         </div>
+                        {/* <div>
+                          
+                        </div> */}
 
                         <div className="filter-container">
                             <label className='select_type'>Call Type: </label>

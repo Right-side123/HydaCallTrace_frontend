@@ -188,7 +188,7 @@ function OutboundCallsPage() {
 
                 {showDateSelector && (
                     <div className="date-input-container">
-                        <div>
+                        <div className='container2'>
                             <label className='select_type'>Start Date:</label>
                             <input
                                 className='select_option'
@@ -196,8 +196,7 @@ function OutboundCallsPage() {
                                 value={startDate}
                                 onChange={(e) => setStartDate(e.target.value)}
                             />
-                        </div>
-                        <div>
+
                             <input
                                 className='select_time'
                                 type="time"
@@ -205,6 +204,9 @@ function OutboundCallsPage() {
                                 onChange={(e) => setStartTime(e.target.value)}
                             />
                         </div>
+                        {/* <div>
+
+                        </div> */}
 
                         <div>
                             <label className='select_type'>End Date:</label>
@@ -214,8 +216,7 @@ function OutboundCallsPage() {
                                 value={endDate}
                                 onChange={(e) => setEndDate(e.target.value)}
                             />
-                        </div>
-                        <div>
+
                             <input
                                 className='select_time'
                                 type="time"
@@ -223,6 +224,9 @@ function OutboundCallsPage() {
                                 onChange={(e) => setEndTime(e.target.value)}
                             />
                         </div>
+                        {/* <div>
+
+                        </div> */}
                     </div>
                 )}
 

@@ -26,10 +26,15 @@ function CdrReportPage() {
     const [selectedAgent, setSelectedAgent] = useState('');
 
     const [callFilter, setCallFilter] = useState('all');
+    const [callStatusFilter, setCallStatusFilter] = useState('all');
 
     const handleFilterChange = (e) => {
         setCallFilter(e.target.value);
     };
+
+    const handleCallStatusChange = (e) => {
+        setCallStatusFilter(e.target.value);
+    }
 
 
 
@@ -85,6 +90,7 @@ function CdrReportPage() {
                     startTime,
                     endTime,
                     filter: callFilter,
+                    callStatus: callStatusFilter,
                     agent: selectedAgent || undefined
                 }
             });
@@ -213,7 +219,7 @@ function CdrReportPage() {
 
                 {showDateSelector && (
                     <div className="date-input-container">
-                        <div>
+                        <div className='container2'>
                             <label className='select_type'>Start Date:</label>
                             <input
                                 className='select_option'
@@ -221,8 +227,7 @@ function CdrReportPage() {
                                 value={startDate}
                                 onChange={(e) => setStartDate(e.target.value)}
                             />
-                        </div>
-                        <div>
+
                             <input
                                 className='select_time'
                                 type='time'
@@ -230,8 +235,11 @@ function CdrReportPage() {
                                 onChange={(e) => setStartTime(e.target.value)}
                             />
                         </div>
+                        {/* <div>
 
-                        <div>
+                        </div> */}
+
+                        <div className='container2'>
                             <label className='select_type'>End Date:</label>
                             <input
                                 className='select_option'
@@ -239,8 +247,7 @@ function CdrReportPage() {
                                 value={endDate}
                                 onChange={(e) => setEndDate(e.target.value)}
                             />
-                        </div>
-                        <div>
+
                             <input
                                 className='select_time'
                                 type='time'
@@ -248,8 +255,11 @@ function CdrReportPage() {
                                 onChange={(e) => setEndTime(e.target.value)}
                             />
                         </div>
+                        {/* <div>
 
-                        <div>
+                        </div> */}
+
+                        <div className='container2'>
                             <label className='select_type'>Agents:</label>
                             <select
                                 className='select_option'
@@ -265,12 +275,22 @@ function CdrReportPage() {
                             </select>
                         </div>
 
-                        <div className="filter-container">
+                        <div className="container2">
                             <label className='select_type'>Call Type: </label>
                             <select value={callFilter} onChange={handleFilterChange} className='select_option'>
                                 <option value="all">All</option>
                                 <option value="outbound">Outbound</option>
                                 <option value="inbound">Inbound</option>
+
+                            </select>
+                        </div>
+
+                        <div className="filter-container">
+                            <label className='select_type'>Call Status: </label>
+                            <select value={callStatusFilter} onChange={handleCallStatusChange} className='select_option'>
+                                <option value="all">All</option>
+                                <option value="ANSWERED">Answered</option>
+                                <option value="Missed">Missed</option>
 
                             </select>
                         </div>

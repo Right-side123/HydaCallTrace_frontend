@@ -645,6 +645,7 @@ import './Agent.css';
 import Header from './Header';
 import Footer from './Footer';
 import * as XLSX from 'xlsx';
+import editicon from './Assets/editagent.png';
 const API_URL = process.env.REACT_APP_API_URL;
 
 
@@ -902,14 +903,15 @@ const AgentPage = () => {
                   <th>Total Outbound</th>
                   <th>Total Inbound</th>
                   <th>Total Missed</th>
+                  <th>Edit</th>
                 </tr>
               </thead>
               <tbody>
                 {filteredAgents.length > 0 ? (
                   filteredAgents.map((agent, index) => (
-                    <tr key={agent.agentmobile} onClick={() => handleAgentClick(agent.agentmobile)} className="clickable-row">
+                    <tr key={index}>
                       <td>{index + 1}</td>
-                      <td>{agent.agentname}</td>
+                      <td key={agent.agentmobile} onClick={() => handleAgentClick(agent.agentmobile)} className="clickable-row">{agent.agentname}</td>
                       <td>{agent.agentmobile}</td>
                       <td>{agent.managername}</td>
                       <td className="tdregion">{agent.department}</td>
@@ -920,6 +922,9 @@ const AgentPage = () => {
                       <td>{agent.totaloutbound || 0}</td>
                       <td>{agent.totalinbound || 0}</td>
                       <td>{agent.totalMissed || 0}</td>
+                      <td>
+                        <img className="editagent" alt='edit' src={editicon} onClick={() => navigate(`/edit-agent/${agent.id}`)} />
+                      </td>
                     </tr>
                   ))
                 ) : (
@@ -933,6 +938,7 @@ const AgentPage = () => {
                   <td>{totals.totalOutbound}</td>
                   <td>{totals.totalInbound}</td>
                   <td>{totals.totalMissed}</td>
+                  <td></td>
                 </tr>
               </tbody>
             </table>

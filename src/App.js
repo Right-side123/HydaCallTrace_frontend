@@ -13,6 +13,7 @@ import AgentDetailPage from './components/SingleAgent';
 import LogoutHandler from './components/LogoutHandler';
 import MissedCallsPage from './components/MissedCalls';
 import AddAgent from './components/AddAgent';
+import UpdateAgent from './components/UpdateAgent';
 
 const App = () => {
   return (
@@ -28,6 +29,9 @@ const App = () => {
         <Route path='/agents' element={<AgentsPage />} />
 
         <Route path='/addagent' element = {<AddAgent/>} />
+
+        <Route path="/edit-agent/:id" element={<UpdateAgent />} />
+
 
         <Route path='/cdr_report' element={<CdrReportPage />} />
 
