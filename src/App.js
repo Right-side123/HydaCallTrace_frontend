@@ -12,6 +12,7 @@ import MissedOutboundCallsPage from './components/Missedoutbound';
 import AgentDetailPage from './components/SingleAgent';
 import LogoutHandler from './components/LogoutHandler';
 import MissedCallsPage from './components/MissedCalls';
+import AddAgent from './components/AddAgent';
 
 const App = () => {
   return (
@@ -25,6 +26,8 @@ const App = () => {
         <Route path="/dashboard" element={<Dashboard />} />
 
         <Route path='/agents' element={<AgentsPage />} />
+
+        <Route path='/addagent' element = {<AddAgent/>} />
 
         <Route path='/cdr_report' element={<CdrReportPage />} />
 

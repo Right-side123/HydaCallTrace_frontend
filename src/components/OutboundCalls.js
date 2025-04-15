@@ -239,21 +239,39 @@ function OutboundCallsPage() {
                                 <th>S.N.</th>
                                 <th>Call Date/Time</th>
                                 <th>Call-Type</th>
-                                <th>Customer-Number</th>
-                                <th>Agent_Name</th>
+                                <th>Call-Status</th>
+                                <th>Agent-Name</th>
                                 <th>Agent-Number</th>
-                                <th>Agent-Dial-Start</th>
-                                <th>Agent-Answered-At</th>
-                                <th>Agent-Disconnected-At</th>
-                                <th>Agent-Duration</th>
-                                <th>Customer-Duration</th>
-                                <th>Customer-Dial-Start</th>
-                                <th>Customer-Answered-At</th>
-                                <th>Customer-Disconnected-At</th>
-                                <th>Agent-Disposition</th>
-                                <th>Customer-Disposition</th>
+                                <th>Customer-Number</th>
+                                <th>Customer-Name</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>Caller-Oprator-Name</th>
+                                <th>Caller-Circle-Name</th>
+                                <th>Client-Correlation-Id</th>
+                                <th>Caller-Id-Type</th>
+                                <th>Caller-Id-Circle</th>
+                                <th>Caller-Number-Status</th>
+                                <th>Caller-Duration</th>
+                                <th>Start-Time</th>
+                                <th>End-Time</th>
+                                <th>Duration</th>
+                                <th>OverAll-Call-Duration</th>
+                                <th>Conversation-Duration</th>
+                                <th>Destination-Operator-Name</th>
+                                <th>Destination-Circle-Name</th>
+                                <th>Destination-Name</th>
+                                <th>Destination-Number-Status</th>
+                                <th>Destination-Number</th>
+                                <th>From-Waiting-Time</th>
+                                <th>Customer-Id</th>
+                                <th>Participant-Address</th>
+                                <th>Participant-Number-Type</th>
+                                <th>Participant-Start-Time</th>
+                                <th>Participant-End-Time</th>
+                                <th>Participant-Duration</th>
                                 <th>Recording...</th>
-                                <th>API-Response</th>
+                                <th>HangUp-Cause</th>
 
                             </tr>
                         </thead>
@@ -261,25 +279,43 @@ function OutboundCallsPage() {
                             {cdrData.map((cdr, index) => (
                                 <tr key={index}>
                                     <td>{index + 1}</td>
-                                    <td>{formatDate(cdr.call_datetime)}</td>
-                                    <td>{cdr.calltype}</td>
-                                    <td>{cdr.custphone}</td>
+                                    <td>{formatDate(cdr.timestamp)}</td>
+                                    <td>{cdr.call_type}</td>
+                                    <td>{cdr.overall_call_status}</td>
                                     <td>{cdr.agentname}</td>
-                                    <td>{cdr.agent}</td>
-                                    <td>{formatDate(cdr.agent_dial_start)}</td>
-                                    <td>{formatDate(cdr.agent_answered_at)}</td>
-                                    <td>{formatDate(cdr.agent_disconnected_at)}</td>
-                                    <td>{cdr.agent_duration}</td>
-                                    <td>{cdr.customer_duration}</td>
-                                    <td>{formatDate(cdr.customer_dial_start)}</td>
-                                    <td>{formatDate(cdr.customer_answered_at)}</td>
-                                    <td>{formatDate(cdr.customer_disconnected_at)}</td>
-                                    <td>{cdr.agent_disposition}</td>
-                                    <td>{cdr.customer_disposition}</td>
-                                    <td onClick={() => handleRecordingClick(cdr.recording_file)} className='custom_recording'>
-                                        {cdr.recording_file}
+                                    <td>{cdr.caller_id}</td>
+                                    <td>{cdr.destination_number}</td>
+                                    <td>{cdr.customer_name}</td>
+                                    <td>{formatDate(cdr.date)}</td>
+                                    <td>{cdr.time}</td>
+                                    <td>{cdr.caller_operator_name}</td>
+                                    <td>{cdr.caller_circle_name}</td>
+                                    <td>{cdr.client_correlation_id}</td>
+                                    <td>{cdr.caller_id_type}</td>
+                                    <td>{cdr.caller_id_circle}</td>
+                                    <td>{cdr.caller_number_status}</td>
+                                    <td>{cdr.caller_duration}</td>
+                                    <td>{cdr.start_time}</td>
+                                    <td>{cdr.end_time}</td>
+                                    <td>{cdr.duration}</td>
+                                    <td>{cdr.overall_call_duration}</td>
+                                    <td>{cdr.conversation_duration}</td>
+                                    <td>{cdr.destination_operator_name}</td>
+                                    <td>{cdr.destination_circle_name}</td>
+                                    <td>{cdr.destination_name}</td>
+                                    <td>{cdr.destination_number_status}</td>
+                                    <td>{cdr.destination_number}</td>
+                                    <td>{cdr.from_waiting_time}</td>
+                                    <td>{cdr.customer_id}</td>
+                                    <td>{cdr.participant_address}</td>
+                                    <td>{cdr.participant_number_type}</td>
+                                    <td>{cdr.participant_start_time}</td>
+                                    <td>{cdr.participant_end_time}</td>
+                                    <td>{cdr.participant_duration}</td>
+                                    <td onClick={() => handleRecordingClick(cdr.recording)} className='custom_recording'>
+                                        {cdr.recording}
                                     </td>
-                                    <td>{cdr.api_response}</td>
+                                    <td>{cdr.hangup_cause}</td>
                                 </tr>
                             ))}
                         </tbody>

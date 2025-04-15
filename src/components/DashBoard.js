@@ -5,11 +5,11 @@ import './Dashboard.css';
 import 'font-awesome/css/font-awesome.min.css';
 import agentimg from './Assets/Agent-PNG.png';
 import cdrimg from './Assets/cdr.png';
-import connectedimg from './Assets/connt.png';
-import notconnectedimg from './Assets/notConnect.png';
+// import connectedimg from './Assets/connt.png';
+// import notconnectedimg from './Assets/notConnect.png';
 import incomingimg from './Assets/incoming.png';
 import outgoingimg from './Assets/outgoing.png';
-import missedoutgoingimg from './Assets/outgoing-missed-call.png';
+// import missedoutgoingimg from './Assets/outgoing-missed-call.png';
 import missedimg from './Assets/missedcall.webp';
 import Footer from './Footer';
 const API_URL = process.env.REACT_APP_API_URL;
@@ -18,11 +18,11 @@ const Dashboard = () => {
 
   const [agents, setAgents] = useState([]);
   const [totalCdr, setTotalCdrCount] = useState([]);
-  const [connectedCalls, setConnectedCalls] = useState([]);
-  const [notConnectedCalls, setNotConnectedCalls] = useState([]);
+  // const [connectedCalls, setConnectedCalls] = useState([]);
+  // const [notConnectedCalls, setNotConnectedCalls] = useState([]);
   const [totalInbound, setTotalInbound] = useState([]);
   const [outgoingCalls, setOutgoingCalls] = useState([]);
-  const [missedOutboundCall, setMissedOutboundCall] = useState([]);
+  // const [missedOutboundCall, setMissedOutboundCall] = useState([]);
   const [missedCalls, setMissedCalls] = useState([]);
   const managerId = localStorage.getItem('manager_id');
 
@@ -115,64 +115,64 @@ const Dashboard = () => {
   }, [managerId]);
 
 
-  useEffect(() => {
-    const fetchTotalCdrCount = async () => {
-      if (!managerId) return;
+  // useEffect(() => {
+  //   const fetchTotalCdrCount = async () => {
+  //     if (!managerId) return;
 
-      try {
-        const response = await fetch(`${API_URL}/totalconnected/${managerId}`);
-        if (!response.ok) {
-          throw new Error('Failed to fetch total CDR count');
-        }
-        const data = await response.json();
-        setConnectedCalls(data.total_cdr_count);
-      } catch (err) {
-        console.error(err);
-      }
-    };
+  //     try {
+  //       const response = await fetch(`${API_URL}/totalconnected/${managerId}`);
+  //       if (!response.ok) {
+  //         throw new Error('Failed to fetch total CDR count');
+  //       }
+  //       const data = await response.json();
+  //       setConnectedCalls(data.total_cdr_count);
+  //     } catch (err) {
+  //       console.error(err);
+  //     }
+  //   };
 
-    fetchTotalCdrCount();
-  }, [managerId]);
-
-
-  useEffect(() => {
-    const fetchTotalCdrCount = async () => {
-      if (!managerId) return;
-
-      try {
-        const response = await fetch(`${API_URL}/totalnotconnected/${managerId}`);
-        if (!response.ok) {
-          throw new Error('Failed to fetch total CDR count');
-        }
-        const data = await response.json();
-        setNotConnectedCalls(data.total_cdr_count);
-      } catch (err) {
-        console.error(err);
-      }
-    };
-
-    fetchTotalCdrCount();
-  }, [managerId]);
+  //   fetchTotalCdrCount();
+  // }, [managerId]);
 
 
-  useEffect(() => {
-    const fetchTotalCdrCount = async () => {
-      if (!managerId) return;
+  // useEffect(() => {
+  //   const fetchTotalCdrCount = async () => {
+  //     if (!managerId) return;
 
-      try {
-        const response = await fetch(`${API_URL}/totalmissedoutbound/${managerId}`);
-        if (!response.ok) {
-          throw new Error('Failed to fetch total CDR count');
-        }
-        const data = await response.json();
-        setMissedOutboundCall(data.total_cdr_count);
-      } catch (err) {
-        console.error(err);
-      }
-    };
+  //     try {
+  //       const response = await fetch(`${API_URL}/totalnotconnected/${managerId}`);
+  //       if (!response.ok) {
+  //         throw new Error('Failed to fetch total CDR count');
+  //       }
+  //       const data = await response.json();
+  //       setNotConnectedCalls(data.total_cdr_count);
+  //     } catch (err) {
+  //       console.error(err);
+  //     }
+  //   };
 
-    fetchTotalCdrCount();
-  }, [managerId]);
+  //   fetchTotalCdrCount();
+  // }, [managerId]);
+
+
+  // useEffect(() => {
+  //   const fetchTotalCdrCount = async () => {
+  //     if (!managerId) return;
+
+  //     try {
+  //       const response = await fetch(`${API_URL}/totalmissedoutbound/${managerId}`);
+  //       if (!response.ok) {
+  //         throw new Error('Failed to fetch total CDR count');
+  //       }
+  //       const data = await response.json();
+  //       setMissedOutboundCall(data.total_cdr_count);
+  //     } catch (err) {
+  //       console.error(err);
+  //     }
+  //   };
+
+  //   fetchTotalCdrCount();
+  // }, [managerId]);
 
 
   useEffect(() => {
@@ -231,19 +231,19 @@ const Dashboard = () => {
 
                   </div>
                 </NavLink>
-                <NavLink to="/connected_calls" className="navlink_link">
+                {/* <NavLink to="/connected_calls" className="navlink_link">
                   <div className="card">
                     <div className='heading_container_connected'>
                       <span className='card_heading'>Connected Calls</span>
                       <img src={connectedimg} alt='connected' className='cdrpng' />
                     </div>
-                    <p>Total Records: {connectedCalls} </p>
+                    <p>Total Records: {connectedCalls} </p>/
 
                     <button className="dashboard-button">Click here</button>
 
                   </div>
-                </NavLink>
-                <NavLink to="/notConnected_calls" className="navlink_link">
+                </NavLink> */}
+                {/* <NavLink to="/notConnected_calls" className="navlink_link">
                   <div className="card">
                     <div className='heading_container_connected'>
                       <span className='card_heading'>Not Connected Calls</span>
@@ -254,7 +254,7 @@ const Dashboard = () => {
                     <button className="dashboard-button">Click here</button>
 
                   </div>
-                </NavLink>
+                </NavLink> */}
                 <NavLink to="/inbound_calls" className="navlink_link">
                   <div className="card">
                     <div className='heading_container_incoming'>
@@ -274,7 +274,6 @@ const Dashboard = () => {
                       <span className='card_heading'>Outgoing Calls</span>
                       <img src={outgoingimg} alt='outgoing' className='incomingpng' />
                     </div>
-                    {/* <h3>Outgoing Calls</h3> */}
                     <p>Total Records: {outgoingCalls}</p>
 
                     <button className="dashboard-button">Click here</button>
@@ -294,19 +293,19 @@ const Dashboard = () => {
 
                   </div>
                 </NavLink>
-                <NavLink to="/Missed_Outbound_calls" className="navlink_link">
+                {/* <NavLink to="/Missed_Outbound_calls" className="navlink_link">
                   <div className="card">
                     <div className='heading_container_connected'>
                       <span className='card_heading'>Missed Outgoing Calls</span>
                       <img src={missedoutgoingimg} alt='failed' className='failedpng' />
                     </div>
-                    {/* <h3>Failed Calls</h3> */}
+                  
                     <p>Total Records: {missedOutboundCall}</p>
 
                     <button className="dashboard-button">Click here</button>
 
                   </div>
-                </NavLink>
+                </NavLink> */}
 
               </div>
               {/* <div className='failed_card_container'>
