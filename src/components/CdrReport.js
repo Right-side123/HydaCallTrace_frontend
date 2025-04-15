@@ -289,8 +289,7 @@ function CdrReportPage() {
                     <table className={modalOpen ? 'blurred' : 'cdr_table'}>
                         <thead>
                             <tr>
-                            <th>S.N.</th>
-                            <th>S.N.</th>
+                                <th>S.N.</th>
                                 <th>Call Date/Time</th>
                                 <th>Call-Type</th>
                                 <th>Call-Status</th>
@@ -332,7 +331,7 @@ function CdrReportPage() {
                         <tbody className='cdr_tbody'>
                             {cdrData.map((cdr, index) => (
                                 <tr key={index}>
-                                     <td>{index + 1}</td>
+                                    <td>{index + 1}</td>
                                     <td>{formatDate(cdr.timestamp)}</td>
                                     <td>{cdr.call_type}</td>
                                     <td>{cdr.overall_call_status}</td>

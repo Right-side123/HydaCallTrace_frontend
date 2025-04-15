@@ -258,7 +258,7 @@ const Dashboard = () => {
                 <NavLink to="/inbound_calls" className="navlink_link">
                   <div className="card">
                     <div className='heading_container_incoming'>
-                      <span className='card_heading'>Incoming Calls</span>
+                      <span className='card_heading'>Inbound Calls</span>
                       <img src={incomingimg} alt='incoming' className='incomingpng' />
                     </div>
                     {/* <h3>Incoming Calls</h3> */}
@@ -271,7 +271,7 @@ const Dashboard = () => {
                 <NavLink to="/outbound_calls" className="navlink_link">
                   <div className="card">
                     <div className='heading_container_incoming'>
-                      <span className='card_heading'>Outgoing Calls</span>
+                      <span className='card_heading'>Outbound Calls</span>
                       <img src={outgoingimg} alt='outgoing' className='incomingpng' />
                     </div>
                     <p>Total Records: {outgoingCalls}</p>

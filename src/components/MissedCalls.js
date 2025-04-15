@@ -31,10 +31,10 @@ function MissedCallsPage() {
 
     useEffect(() => {
         const currentDate = new Date();
-        const localDate = currentDate.toLocaleDateString('en-CA'); 
+        const localDate = currentDate.toLocaleDateString('en-CA');
         setStartDate(localDate);
         setEndDate(localDate);
-      }, []);
+    }, []);
 
     useEffect(() => {
         const storedManagerId = localStorage.getItem('manager_id');
@@ -126,7 +126,7 @@ function MissedCallsPage() {
             'Customer-Disconnected-At': formatDate(cdr.customer_disconnected_at),
             'Agent-Disposition': cdr.agent_disposition,
             'Customer-Disposition': cdr.customer_disposition
-            
+
         }));
         const sheetData = [headers, ...dataWithHeaders.map(row => Object.values(row))];
         const ws = XLSX.utils.aoa_to_sheet(sheetData);
@@ -219,7 +219,7 @@ function MissedCallsPage() {
                                 <option value="all">All</option>
                                 <option value="outbound">Outbound</option>
                                 <option value="inbound">Inbound</option>
-                                
+
                             </select>
                         </div>
                     </div>
@@ -254,8 +254,7 @@ function MissedCallsPage() {
                     <table className={modalOpen ? 'blurred' : 'cdr_table'} >
                         <thead>
                             <tr>
-                            <th>S.N.</th>
-                            <th>S.N.</th>
+                                <th>S.N.</th>
                                 <th>Call Date/Time</th>
                                 <th>Call-Type</th>
                                 <th>Call-Status</th>
@@ -298,7 +297,7 @@ function MissedCallsPage() {
                         <tbody className='cdr_tbody'>
                             {cdrData.map((cdr, index) => (
                                 <tr key={index}>
-                                     <td>{index + 1}</td>
+                                    <td>{index + 1}</td>
                                     <td>{formatDate(cdr.timestamp)}</td>
                                     <td>{cdr.call_type}</td>
                                     <td>{cdr.overall_call_status}</td>
@@ -336,7 +335,7 @@ function MissedCallsPage() {
                                         {cdr.recording}
                                     </td>
                                     <td>{cdr.hangup_cause}</td>
-                                 
+
                                 </tr>
                             ))}
                         </tbody>
