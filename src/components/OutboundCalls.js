@@ -94,28 +94,47 @@ function OutboundCallsPage() {
 
     const downloadExcel = () => {
         const headers = [
-            'S.N.', 'Call Date/Time', 'Call-Type', 'Customer-Number', 'Agent-Name',
-            'Agent-Number', 'Agent-Dial-Start', 'Agent-Answered-At', 'Agent-Disconnected-At', 'Agent-Duration', 'Customer-Duration',
-            'Customer-Dial-Start', 'Customer-Answered-At', 'Customer-Disconnected-At', 'Agent-Disposition',
-            'Customer-Disposition'
+            'S.N.', 'Call Date/Time', 'Call-Type', 'Call-Status', 'Agent-Name', 'Agent-Number', 'Customer-Number', 'Customer-Name', 'Date', 'Time', 'Caller-Operator-Name', 'Caller-Circle-Name',
+            'Caller-Correlation-Id', 'Caller-Id-Type', 'Caller-Id-Circle', 'Caller-Number-Status', 'Caller-Duration', 'Start-Time', 'End-Time', 'Duration', 'OverAll-Call-Duration', 'Conversation-Duration',
+            'Destination-Operator-Name', 'Destination-Circle-Name', 'Destination-Name', 'Destination-Number-Status', 'Destination-Number', 'From-Waiting-Time', 'Customer-Id', 'Participant-Address',
+            'Participant-Number-Type', 'Participant-Start-Time', 'Participant-End-Time', 'Participant-Duration', 'HangUp-Cause'
         ];
         const dataWithHeaders = cdrData.map((cdr, index) => ({
             'S.N.': index + 1,
-            'Call Date/Time': formatDate(cdr.call_datetime),
-            'Call-Type': cdr.calltype,
-            'Customer-Number': cdr.custphone,
+            'Call Date/Time': formatDate(cdr.timestamp),
+            'Call-Type': cdr.call_type,
+            'Call-Status': cdr.overall_call_status,
             'Agent-Name': cdr.agentname,
-            'Agent-Number': cdr.agent,
-            'Agent-Dial-Start': formatDate(cdr.agent_dial_start),
-            'Agent-Answered-At': formatDate(cdr.agent_answered_at),
-            'Agent-Disconnected-At': formatDate(cdr.agent_disconnected_at),
-            'Agent-Duration': cdr.agent_duration,
-            'Customer-Duration': cdr.customer_duration,
-            'Customer-Dial-Start': formatDate(cdr.customer_dial_start),
-            'Customer-Answered-At': formatDate(cdr.customer_answered_at),
-            'Customer-Disconnected-At': formatDate(cdr.customer_disconnected_at),
-            'Agent-Disposition': cdr.agent_disposition,
-            'Customer-Disposition': cdr.customer_disposition
+            'Agent-Number': cdr.agentmobile,
+            'Customer-Number': cdr.customer_number,
+            'Customer-Name': cdr.customer_name,
+            'Date': formatDate(cdr.date),
+            'Time': cdr.time,
+            'Caller-Operator-Name': cdr.caller_operator_name,
+            'Caller-Circle-Name': cdr.caller_circle_name,
+            'Caller-Correlation-Id': cdr.client_correlation_id,
+            'Caller-Id-Type': cdr.caller_id_type,
+            'Caller-Id-Circle': cdr.caller_id_circle,
+            'Caller-Number-Status': cdr.caller_number_status,
+            'Caller-Duration': cdr.caller_duration,
+            'Start-Time': cdr.start_time,
+            'End-Time': cdr.end_time,
+            'Duration': cdr.duration,
+            'OverAll-Call-Duration': cdr.overall_call_duration,
+            'Conversation-Duration': cdr.conversation_duration,
+            'Destination-Operator-Name': cdr.destination_operator_name,
+            'Destination-Circle-Name': cdr.destination_circle_name,
+            'Destination-Name': cdr.destination_name,
+            'Destination-Number-Status': cdr.destination_number_status,
+            'Destination-Number': cdr.destination_number,
+            'From-Waiting-Time': cdr.from_waiting_time,
+            'Customer-Id': cdr.customer_id,
+            'Participant-Address': cdr.participant_address,
+            'Participant-Number-Type': cdr.participant_number_type,
+            'Participant-Start-Time': cdr.participant_start_time,
+            'Participant-End-Time': cdr.participant_end_time,
+            'Participant-Duration': cdr.participant_duration,
+            'HangUp-Cause': cdr.hangup_cause
 
 
         }));
