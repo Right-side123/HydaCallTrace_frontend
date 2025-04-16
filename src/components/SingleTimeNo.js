@@ -209,7 +209,7 @@ function SingleTimeNo () {
         <div>
             <Header />
             <div className="CdrReportPage">
-                <h1 className='page_heading'>Single Number CDR</h1>
+                <h1 className='page_heading'>Unique Calls</h1>
 
                 {cdrData.length > 0 && (
                     <div total_records_container>

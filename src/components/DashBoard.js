@@ -24,6 +24,7 @@ const Dashboard = () => {
   const [outgoingCalls, setOutgoingCalls] = useState([]);
   // const [missedOutboundCall, setMissedOutboundCall] = useState([]);
   const [missedCalls, setMissedCalls] = useState([]);
+  const [uniqueCalls, setUniqueCalls] = useState([])
   const managerId = localStorage.getItem('manager_id');
 
   useEffect(() => {
@@ -194,6 +195,25 @@ const Dashboard = () => {
     fetchTotalCdrCount();
   }, [managerId]);
 
+  useEffect(() => {
+    const fetchTotalCdrCount = async () => {
+      if (!managerId) return;
+
+      try {
+        const response = await fetch(`${API_URL}/uniqueCalls/${managerId}`);
+        if (!response.ok) {
+          throw new Error('Failed to fetch total CDR count');
+        }
+        const data = await response.json();
+        setUniqueCalls(data.total_unique_customer_calls);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+
+    fetchTotalCdrCount();
+  }, [managerId]);
+
 
   return (
     <div>
@@ -298,11 +318,10 @@ const Dashboard = () => {
                 <NavLink to="/singletimecdr" className="navlink_link">
                   <div className="card">
                     <div className='heading_container_failed'>
-                      <span className='card_heading'>Onetime Calls</span>
+                      <span className='card_heading'>Unique Calls</span>
                       <img src={cdrimg} alt='failed' className='failedpng' />
                     </div>
-                    {/* <h3>Failed Calls</h3> */}
-                    <p>Total Records: {missedCalls}</p>
+                    <p>Total Records: {uniqueCalls}</p>
 
                     <button className="dashboard-button">Click here</button>
 
@@ -324,10 +343,6 @@ const Dashboard = () => {
                 </NavLink> */}
 
               </div>
-              {/* <div className='failed_card_container'>
-               
-              </div> */}
-
             </div>
           </div>
         </div>
