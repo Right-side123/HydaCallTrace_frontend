@@ -9,8 +9,8 @@ const API_URL = process.env.REACT_APP_API_URL;
 
 const UpdateAgent = () => {
     const { id } = useParams();
-    console.log(id);
-    
+    // console.log(id);
+
     const navigate = useNavigate();
 
     const [agentname, setAgentname] = useState('');
@@ -28,16 +28,14 @@ const UpdateAgent = () => {
         const fetchData = async () => {
             try {
                 const [agentRes, managerRes] = await Promise.all([
-                    axios.get(`${API_URL}/agents/${id}`),
+                    axios.get(`${API_URL}/agent/${id}`),
                     axios.get(`${API_URL}/manager`)
                 ]);
-        
-                // Log the API response to inspect its structure
-                console.log('API Response:', agentRes.data);
-        
-                // Find the specific agent in the agents array by matching the `id`
-                const agent = agentRes.data.agents?.find((a) => a.id === parseInt(id)); // Match the `id` from the URL
-        
+
+                // console.log('API Response:', agentRes.data);
+
+                const agent = agentRes.data.agents?.find((a) => a.id === parseInt(id));
+
                 if (agent) {
                     setAgentname(agent.agentname);
                     setAgentmobile(agent.agentmobile);
@@ -48,17 +46,15 @@ const UpdateAgent = () => {
                     setSelectedManagerName(agent.managername);
                 } else {
                     console.error("Agent not found for id:", id);
-                    setError(true);  // Set error state
+                    setError(true);
                 }
-        
-                // Set manager data if available
+
                 setManagers(managerRes.data?.managers || []);
             } catch (err) {
                 console.error("Error fetching data:", err);
-                setError(true); // Set error state in case of API call failure
+                setError(true);
             }
         };
-        
 
         fetchData();
     }, [id]);
@@ -117,11 +113,11 @@ const UpdateAgent = () => {
                                 required
                             />
                         </div>
-                        
+
                     </div>
 
                     <div className='agent_name_container'>
-                       
+
 
                         <div>
                             <label className='content_heding_mobile'>Agent Mobile: </label>
