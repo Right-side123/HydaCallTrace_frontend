@@ -293,6 +293,22 @@ const Dashboard = () => {
 
                   </div>
                 </NavLink>
+
+
+                <NavLink to="/singletimecdr" className="navlink_link">
+                  <div className="card">
+                    <div className='heading_container_failed'>
+                      <span className='card_heading'>Onetime Calls</span>
+                      <img src={cdrimg} alt='failed' className='failedpng' />
+                    </div>
+                    {/* <h3>Failed Calls</h3> */}
+                    <p>Total Records: {missedCalls}</p>
+
+                    <button className="dashboard-button">Click here</button>
+
+                  </div>
+                </NavLink>
+
                 {/* <NavLink to="/Missed_Outbound_calls" className="navlink_link">
                   <div className="card">
                     <div className='heading_container_connected'>

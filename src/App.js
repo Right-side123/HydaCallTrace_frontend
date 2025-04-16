@@ -14,6 +14,7 @@ import LogoutHandler from './components/LogoutHandler';
 import MissedCallsPage from './components/MissedCalls';
 import AddAgent from './components/AddAgent';
 import UpdateAgent from './components/UpdateAgent';
+import SingleTimeNo from './components/SingleTimeNo';
 
 const App = () => {
   return (
@@ -28,12 +29,14 @@ const App = () => {
 
         <Route path='/agents' element={<AgentsPage />} />
 
-        <Route path='/addagent' element = {<AddAgent/>} />
+        <Route path='/addagent' element={<AddAgent />} />
 
         <Route path="/edit-agent/:id" element={<UpdateAgent />} />
 
 
         <Route path='/cdr_report' element={<CdrReportPage />} />
+
+        <Route path='/singletimecdr' element={<SingleTimeNo />} />
 
         <Route path="/cdr-report/:agentName" element={<CdrReportPage />} />
 
