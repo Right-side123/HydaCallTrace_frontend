@@ -715,6 +715,7 @@ const AgentPage = () => {
             totaloutbound: callStats.totaloutbound || 0,
             totalinbound: callStats.totalinbound || 0,
             totalMissed: callStats.totalMissed || 0,
+            totalUnique: callStats.totalUnique || 0
           };
         });
 
@@ -743,6 +744,7 @@ const AgentPage = () => {
     let totalOutbound = 0;
     let totalInbound = 0;
     let totalMissed = 0;
+    let totalUnique =0;
 
 
     agents.forEach(agent => {
@@ -750,6 +752,7 @@ const AgentPage = () => {
       totalOutbound += parseInt(agent.totaloutbound) || 0;
       totalInbound += parseInt(agent.totalinbound) || 0;
       totalMissed += parseInt(agent.totalMissed) || 0;
+      totalUnique += parseInt(agent.totalUnique)
     });
 
     return {
@@ -757,6 +760,7 @@ const AgentPage = () => {
       totalOutbound,
       totalInbound,
       totalMissed,
+      totalUnique
     };
   };
 
@@ -780,7 +784,7 @@ const AgentPage = () => {
     const headers = [
       'S.N.', 'Agent Name', 'Agent Mobile No', 'Manager', 'IMEI NO', 'SIM No', 'Status', 'Department',
       'Total Calls', 'Total Outbound Calls', 'Total Inbound Calls',
-      'Total Missed Calls'
+      'Total Missed Calls', 'Total Unique Calls'
     ];
     const dataWithHeaders = filteredAgents.map((agent, index) => ({
       'S.N.': index + 1,
@@ -794,7 +798,8 @@ const AgentPage = () => {
       'Total Calls': safeNumber(agent.totalCalls),
       'Total Outbound Calls': safeNumber(agent.totaloutbound),
       'Total Inbound Calls': safeNumber(agent.totalinbound),
-      'Total Missed Calls': safeNumber(agent.totalMissed)
+      'Total Missed Calls': safeNumber(agent.totalMissed),
+      'Total Unique Calls' : safeNumber(totals.totalUnique)
     }));
 
     const totalRow = {
@@ -809,7 +814,8 @@ const AgentPage = () => {
       'Total Calls': safeNumber(totals.totalCalls),
       'Total Outbound Calls': safeNumber(totals.totalOutbound),
       'Total Inbound Calls': safeNumber(totals.totalInbound),
-      'Total Missed Calls': safeNumber(totals.totalMissed)
+      'Total Missed Calls': safeNumber(totals.totalMissed),
+      'Total Unique Calls' : safeNumber(totals.totalUnique)
     };
     const sheetData = [dateTimeRow, blankRow, headers, ...dataWithHeaders.map(row => Object.values(row)),
       Object.values(totalRow)];
@@ -903,6 +909,7 @@ const AgentPage = () => {
                   <th>Total Outbound</th>
                   <th>Total Inbound</th>
                   <th>Total Missed</th>
+                  <th>Total Unique</th>
                   <th>Edit</th>
                 </tr>
               </thead>
@@ -922,6 +929,7 @@ const AgentPage = () => {
                       <td>{agent.totaloutbound || 0}</td>
                       <td>{agent.totalinbound || 0}</td>
                       <td>{agent.totalMissed || 0}</td>
+                      <td>{agent.totalUnique || 0}</td>
                       <td>
                         <img className="editagent" alt='edit' src={editicon} onClick={() => navigate(`/edit-agent/${agent.id}`)} />
                       </td>
@@ -938,6 +946,7 @@ const AgentPage = () => {
                   <td>{totals.totalOutbound}</td>
                   <td>{totals.totalInbound}</td>
                   <td>{totals.totalMissed}</td>
+                  <td>{totals.totalUnique}</td>
                   <td></td>
                 </tr>
               </tbody>
