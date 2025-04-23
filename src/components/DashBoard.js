@@ -11,6 +11,7 @@ import incomingimg from './Assets/incoming.png';
 import outgoingimg from './Assets/outgoing.png';
 // import missedoutgoingimg from './Assets/outgoing-missed-call.png';
 import missedimg from './Assets/missedcall.webp';
+import uniqueimg from './Assets/uniquecall.png';
 import Footer from './Footer';
 const API_URL = process.env.REACT_APP_API_URL;
 
@@ -319,7 +320,7 @@ const Dashboard = () => {
                   <div className="card">
                     <div className='heading_container_failed'>
                       <span className='card_heading'>Unique Calls</span>
-                      <img src={cdrimg} alt='failed' className='failedpng' />
+                      <img src={uniqueimg} alt='failed' className='failedpng' />
                     </div>
                     <p>Total Records: {uniqueCalls}</p>
 
