@@ -318,7 +318,7 @@ function CdrReportPage() {
 
                 {cdrData.length > 0 && (
                     <div className="buttons-container">
-                        <button onClick={handleBack} className='dwldbtn_back'>Back</button>
+                        <button onClick={handleBack} className='dwldbtn_backsss'>Back</button>
                         <button onClick={downloadExcel} className='cdr_back_dwldbtn'>Download</button>
                     </div>
                 )}

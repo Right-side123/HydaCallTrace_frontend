@@ -42,6 +42,21 @@ input[type="date"] {
   margin-top: 10px;
 }
 
+.dwldbtn_backsss {
+  padding: 8px 20px;
+  font-size: 16px;
+  background-color: #fff;
+  color: #38346c;
+  border: 1.5px solid #ffa444;
+  border-radius: 5px;
+}
+
+.dwldbtn_backsss:hover {
+  background-color: #ffa444;
+  color: #38346c;
+  box-shadow: 0 2px 4px #af9d8a;
+}
+
 .cdr_back_dwldbtn_back {
   padding: 8px 25px;
   font-size: 16px;
@@ -1086,16 +1101,16 @@ td:nth-child(22) {
     margin-top: 0px;
   }
 
-  .date-input-container{
+  .date-input-container {
     display: block;
-    
+
   }
 
-  .container2{
+  .container2 {
     margin-bottom: 20px;
   }
 
-  .select_type{
+  .select_type {
     margin-right: 10px;
   }
 
@@ -1658,6 +1673,7 @@ td:nth-child(22) {
 
 
 @media (max-width: 340px) {
+
   .NotConnectedCdrPage,
   .ConnectedCdrPage,
   .inboundCdrPage,
