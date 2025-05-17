@@ -330,7 +330,7 @@ function SingleTimeNo () {
                                 <th>S.N.</th>
                                 <th>Call Date/Time</th>
                                 <th>Call-Type</th>
-                                <th>Call-Status</th>
+                                <th>OverAll-Call-Status</th>
                                 <th>Agent-Name</th>
                                 <th>Agent-Number</th>
                                 <th>Customer-Number</th>
@@ -342,7 +342,7 @@ function SingleTimeNo () {
                                 <th>Client-Correlation-Id</th>
                                 <th>Caller-Id-Type</th>
                                 <th>Caller-Id-Circle</th>
-                                <th>Caller-Number-Status</th>
+                                <th>Caller-Status</th>
                                 <th>Caller-Duration</th>
                                 <th>Start-Time</th>
                                 <th>End-Time</th>
@@ -352,15 +352,12 @@ function SingleTimeNo () {
                                 <th>Destination-Operator-Name</th>
                                 <th>Destination-Circle-Name</th>
                                 <th>Destination-Name</th>
-                                <th>Destination-Number-Status</th>
+                                <th>Destination-Status</th>
                                 <th>Destination-Number</th>
                                 <th>From-Waiting-Time</th>
-                                <th>Customer-Id</th>
                                 <th>Participant-Address</th>
+                                <th>Participant-type</th>
                                 <th>Participant-Number-Type</th>
-                                <th>Participant-Start-Time</th>
-                                <th>Participant-End-Time</th>
-                                <th>Participant-Duration</th>
                                 <th>Recording...</th>
                                 <th>HangUp-Cause</th>
 
@@ -371,42 +368,39 @@ function SingleTimeNo () {
                                 <tr key={index}>
                                     <td>{index + 1}</td>
                                     <td>{formatDate(cdr.timestamp)}</td>
-                                    <td>{cdr.call_type}</td>
-                                    <td>{cdr.overall_call_status}</td>
+                                    <td>{cdr.Call_Type}</td>
+                                    <td>{cdr.Overall_Call_Status}</td>
                                     <td>{cdr.agentname}</td>
                                     <td>{cdr.agentmobile}</td>
                                     <td>{cdr.customer_number}</td>
-                                    <td>{cdr.customer_name}</td>
-                                    <td>{formatDate(cdr.date)}</td>
-                                    <td>{cdr.time}</td>
-                                    <td>{cdr.caller_operator_name}</td>
-                                    <td>{cdr.caller_circle_name}</td>
-                                    <td>{cdr.client_correlation_id}</td>
-                                    <td>{cdr.caller_id_type}</td>
-                                    <td>{cdr.caller_id_circle}</td>
-                                    <td>{cdr.caller_number_status}</td>
-                                    <td>{cdr.caller_duration}</td>
-                                    <td>{cdr.start_time}</td>
-                                    <td>{cdr.end_time}</td>
+                                    <td>{cdr.Customer_Name}</td>
+                                    <td>{cdr.date}</td>
+                                    <td>{cdr.Time}</td>
+                                    <td>{cdr.Caller_Operator_Name}</td>
+                                    <td>{cdr.Caller_Circle_Name}</td>
+                                    <td>{cdr.Client_Correlation_Id}</td>
+                                    <td>{cdr.calleridType}</td>
+                                    <td>{cdr.callerIdCircle}</td>
+                                    <td>{cdr.Caller_Status}</td>
+                                    <td>{cdr.Caller_Duration}</td>
+                                    <td>{cdr.startTime}</td>
+                                    <td>{cdr.endTime}</td>
                                     <td>{cdr.duration}</td>
-                                    <td>{cdr.overall_call_duration}</td>
-                                    <td>{cdr.conversation_duration}</td>
-                                    <td>{cdr.destination_operator_name}</td>
-                                    <td>{cdr.destination_circle_name}</td>
-                                    <td>{cdr.destination_name}</td>
-                                    <td>{cdr.destination_number_status}</td>
-                                    <td>{cdr.destination_number}</td>
-                                    <td>{cdr.from_waiting_time}</td>
-                                    <td>{cdr.customer_id}</td>
-                                    <td>{cdr.participant_address}</td>
-                                    <td>{cdr.participant_number_type}</td>
-                                    <td>{cdr.participant_start_time}</td>
-                                    <td>{cdr.participant_end_time}</td>
-                                    <td>{cdr.participant_duration}</td>
-                                    <td onClick={() => handleRecordingClick(cdr.recording)} className='custom_recording'>
-                                        {cdr.recording}
+                                    <td>{cdr.Overall_Call_Duration}</td>
+                                    <td>{cdr.conversationDuration}</td>
+                                    <td>{cdr.Destination_Operator_Name}</td>
+                                    <td>{cdr.Destination_Circle_Name}</td>
+                                    <td>{cdr.Destination_Name}</td>
+                                    <td>{cdr.Destination_Status}</td>
+                                    <td>{cdr.Destination_Number}</td>
+                                    <td>{cdr.fromWaitingTime}</td>
+                                    <td>{cdr.participantAddress}</td>
+                                    <td>{cdr.participantType}</td>
+                                    <td>{cdr.participantNumberType}</td>
+                                    <td onClick={() => handleRecordingClick(cdr.Recording)} className='custom_recording'>
+                                        {cdr.Recording}
                                     </td>
-                                    <td>{cdr.hangup_cause}</td>
+                                    <td>{cdr.Hangup_Cause}</td>
                                 </tr>
                             ))}
                         </tbody>

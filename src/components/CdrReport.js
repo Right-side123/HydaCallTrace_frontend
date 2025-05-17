@@ -279,8 +279,8 @@ function CdrReportPage() {
                             <label className='select_type'>Call Type: </label>
                             <select value={callFilter} onChange={handleFilterChange} className='select_option'>
                                 <option value="all">All</option>
-                                <option value="outbound">Outbound</option>
-                                <option value="inbound">Inbound</option>
+                                <option value="OUTBOUND">Outbound</option>
+                                <option value="INBOUND">Inbound</option>
 
                             </select>
                         </div>
@@ -289,7 +289,7 @@ function CdrReportPage() {
                             <label className='select_type'>Call Status: </label>
                             <select value={callStatusFilter} onChange={handleCallStatusChange} className='select_option'>
                                 <option value="all">All</option>
-                                <option value="ANSWERED">Answered</option>
+                                <option value="Answered">Answered</option>
                                 <option value="Missed">Missed</option>
 
                             </select>
@@ -330,7 +330,7 @@ function CdrReportPage() {
                                 <th>S.N.</th>
                                 <th>Call Date/Time</th>
                                 <th>Call-Type</th>
-                                <th>Call-Status</th>
+                                <th>OverAll-Call-Status</th>
                                 <th>Agent-Name</th>
                                 <th>Agent-Number</th>
                                 <th>Customer-Number</th>
@@ -340,9 +340,9 @@ function CdrReportPage() {
                                 <th>Caller-Oprator-Name</th>
                                 <th>Caller-Circle-Name</th>
                                 <th>Client-Correlation-Id</th>
-                                {/* <th>Caller-Id-Type</th> */}
-                                {/* <th>Caller-Id-Circle</th> */}
-                                {/* <th>Caller-Number-Status</th> */}
+                                <th>Caller-Id-Type</th>
+                                <th>Caller-Id-Circle</th>
+                                <th>Caller-Status</th>
                                 <th>Caller-Duration</th>
                                 <th>Start-Time</th>
                                 <th>End-Time</th>
@@ -352,17 +352,14 @@ function CdrReportPage() {
                                 <th>Destination-Operator-Name</th>
                                 <th>Destination-Circle-Name</th>
                                 <th>Destination-Name</th>
-                                <th>Destination-Number-Status</th>
+                                <th>Destination-Status</th>
                                 <th>Destination-Number</th>
                                 <th>From-Waiting-Time</th>
-                                {/* <th>Customer-Id</th> */}
-                                {/* <th>Participant-Address</th> */}
-                                {/* <th>Participant-Number-Type</th> */}
-                                {/* <th>Participant-Start-Time</th> */}
-                                {/* <th>Participant-End-Time</th> */}
-                                {/* <th>Participant-Duration</th> */}
+                                <th>Participant-Address</th>
+                                <th>Participant-type</th>
+                                <th>Participant-Number-Type</th>
                                 <th>Recording...</th>
-                                {/* <th>HangUp-Cause</th> */}
+                                <th>HangUp-Cause</th>
 
                             </tr>
                         </thead>
@@ -377,13 +374,14 @@ function CdrReportPage() {
                                     <td>{cdr.agentmobile}</td>
                                     <td>{cdr.customer_number}</td>
                                     <td>{cdr.Customer_Name}</td>
-                                    <td>{formatDate(cdr.date)}</td>
+                                    <td>{cdr.date}</td>
                                     <td>{cdr.Time}</td>
                                     <td>{cdr.Caller_Operator_Name}</td>
                                     <td>{cdr.Caller_Circle_Name}</td>
                                     <td>{cdr.Client_Correlation_Id}</td>
-                                    {/* <td>{cdr.Caller_ID}</td> */}
-                                   
+                                    <td>{cdr.calleridType}</td>
+                                    <td>{cdr.callerIdCircle}</td>
+                                    <td>{cdr.Caller_Status}</td>
                                     <td>{cdr.Caller_Duration}</td>
                                     <td>{cdr.startTime}</td>
                                     <td>{cdr.endTime}</td>
@@ -393,14 +391,16 @@ function CdrReportPage() {
                                     <td>{cdr.Destination_Operator_Name}</td>
                                     <td>{cdr.Destination_Circle_Name}</td>
                                     <td>{cdr.Destination_Name}</td>
-                                    <td>{cdr.destination_number_status}</td>
+                                    <td>{cdr.Destination_Status}</td>
                                     <td>{cdr.Destination_Number}</td>
                                     <td>{cdr.fromWaitingTime}</td>
-                                    
+                                    <td>{cdr.participantAddress}</td>
+                                    <td>{cdr.participantType}</td>
+                                    <td>{cdr.participantNumberType}</td>
                                     <td onClick={() => handleRecordingClick(cdr.Recording)} className='custom_recording'>
                                         {cdr.Recording}
                                     </td>
-                                    {/* <td>{cdr.hangup_cause}</td> */}
+                                    <td>{cdr.Hangup_Cause}</td>
                                 </tr>
                             ))}
                         </tbody>
