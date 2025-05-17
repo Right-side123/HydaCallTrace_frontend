@@ -289,7 +289,7 @@ function CdrReportPage() {
                             <label className='select_type'>Call Status: </label>
                             <select value={callStatusFilter} onChange={handleCallStatusChange} className='select_option'>
                                 <option value="all">All</option>
-                                <option value="Answered">Answered</option>
+                                <option value="ANSWERED">Answered</option>
                                 <option value="Missed">Missed</option>
 
                             </select>
