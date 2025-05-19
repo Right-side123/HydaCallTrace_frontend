@@ -288,7 +288,7 @@ function OutboundCallsPage() {
                                 <th>Destination-Number</th>
                                 <th>From-Waiting-Time</th>
                                 <th>Participant-Address</th>
-                                <th>Participant-type</th>
+                              
                                 <th>Participant-Number-Type</th>
                                 <th>Recording...</th>
                                 <th>HangUp-Cause</th>
@@ -327,7 +327,7 @@ function OutboundCallsPage() {
                                     <td>{cdr.Destination_Number}</td>
                                     <td>{cdr.fromWaitingTime}</td>
                                     <td>{cdr.participantAddress}</td>
-                                    <td>{cdr.participantType}</td>
+                                  
                                     <td>{cdr.participantNumberType}</td>
                                     <td onClick={() => handleRecordingClick(cdr.Recording)} className='custom_recording'>
                                         {cdr.Recording}

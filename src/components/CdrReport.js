@@ -130,7 +130,7 @@ function CdrReportPage() {
             'S.N.', 'Call Date/Time', 'Call-Type', 'Call-Status', 'Agent-Name', 'Agent-Number', 'Customer-Number', 'Customer-Name', 'Date', 'Time', 'Caller-Operator-Name', 'Caller-Circle-Name',
             'Caller-Correlation-Id', 'Caller-Id-Type', 'Caller-Id-Circle', 'Caller-Number-Status', 'Caller-Duration', 'Start-Time', 'End-Time', 'Duration', 'OverAll-Call-Duration', 'Conversation-Duration',
             'Destination-Operator-Name', 'Destination-Circle-Name', 'Destination-Name', 'Destination-Number-Status', 'Destination-Number', 'From-Waiting-Time', 'Customer-Id', 'Participant-Address',
-            'Participant-Number-Type', 'Participant-Start-Time', 'Participant-End-Time', 'Participant-Duration', 'HangUp-Cause'
+            'Participant-Number-Type', 'HangUp-Cause'
         ];
         const dataWithHeaders = cdrData.map((cdr, index) => ({
             'S.N.': index + 1,
@@ -141,7 +141,7 @@ function CdrReportPage() {
             'Agent-Number': cdr.agentmobile,
             'Customer-Number': cdr.customer_number,
             'Customer-Name': cdr.customer_name,
-            'Date': formatDate(cdr.date),
+            'Date': cdr.date,
             'Time': cdr.time,
             'Caller-Operator-Name': cdr.caller_operator_name,
             'Caller-Circle-Name': cdr.caller_circle_name,
@@ -161,12 +161,8 @@ function CdrReportPage() {
             'Destination-Number-Status': cdr.destination_number_status,
             'Destination-Number': cdr.destination_number,
             'From-Waiting-Time': cdr.from_waiting_time,
-            'Customer-Id': cdr.customer_id,
             'Participant-Address': cdr.participant_address,
             'Participant-Number-Type': cdr.participant_number_type,
-            'Participant-Start-Time': cdr.participant_start_time,
-            'Participant-End-Time': cdr.participant_end_time,
-            'Participant-Duration': cdr.participant_duration,
             'HangUp-Cause': cdr.hangup_cause
 
         }));
@@ -356,7 +352,7 @@ function CdrReportPage() {
                                 <th>Destination-Number</th>
                                 <th>From-Waiting-Time</th>
                                 <th>Participant-Address</th>
-                                <th>Participant-type</th>
+                                
                                 <th>Participant-Number-Type</th>
                                 <th>Recording...</th>
                                 <th>HangUp-Cause</th>
@@ -395,7 +391,7 @@ function CdrReportPage() {
                                     <td>{cdr.Destination_Number}</td>
                                     <td>{cdr.fromWaitingTime}</td>
                                     <td>{cdr.participantAddress}</td>
-                                    <td>{cdr.participantType}</td>
+                                  
                                     <td>{cdr.participantNumberType}</td>
                                     <td onClick={() => handleRecordingClick(cdr.Recording)} className='custom_recording'>
                                         {cdr.Recording}
