@@ -6,9 +6,6 @@ import AgentsPage from './components/Agent';
 import CdrReportPage from './components/CdrReport';
 import OutboundCallsPage from './components/OutboundCalls';
 import InboundCallsPage from './components/InboundCalls';
-import ConnectedCallsPage from './components/ConnectedCalls';
-import NotConnectedCallsPage from './components/NotConnectedCalls';
-import MissedOutboundCallsPage from './components/Missedoutbound';
 import AgentDetailPage from './components/SingleAgent';
 import LogoutHandler from './components/LogoutHandler';
 import MissedCallsPage from './components/MissedCalls';
@@ -43,12 +40,6 @@ const App = () => {
         <Route path='/outbound_calls' element={<OutboundCallsPage />} />
 
         <Route path='/inbound_calls' element={<InboundCallsPage />} />
-
-        <Route path='/connected_calls' element={<ConnectedCallsPage />} />
-
-        <Route path='/notConnected_calls' element={<NotConnectedCallsPage />} />
-
-        <Route path='/Missed_Outbound_calls' element={<MissedOutboundCallsPage />} />
 
         <Route path='missed_calls' element={<MissedCallsPage />} />
 

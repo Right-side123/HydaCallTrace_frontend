@@ -77,6 +77,40 @@ function OutboundCallsPage() {
         }
     };
 
+
+    function formatDuration(milliseconds) {
+        const totalSeconds = Math.floor(milliseconds / 1000);
+        const hours = Math.floor(totalSeconds / 3600);
+        const minutes = Math.floor((totalSeconds % 3600) / 60);
+        const seconds = totalSeconds % 60;
+
+        return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    }
+
+    function formatTime(timeStr) {
+        const parts = timeStr.split(":");
+        if (parts.length === 2) {
+            const minutes = parseInt(parts[0], 10);
+            const seconds = parseInt(parts[1], 10);
+
+            const hours = Math.floor(minutes / 60);
+            const remainingMinutes = minutes % 60;
+
+            return `${String(hours).padStart(2, "0")}:${String(remainingMinutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+        }
+        return timeStr;
+    }
+
+
+    function formatEpochToTime(epochTime) {
+        if (!epochTime) return "00:00:00";
+        const date = new Date(Number(epochTime));
+        const hours = String(date.getHours()).padStart(2, '0');
+        const minutes = String(date.getMinutes()).padStart(2, '0');
+        const seconds = String(date.getSeconds()).padStart(2, '0');
+        return `${hours}:${minutes}:${seconds}`;
+    }
+
     const formatDate = (dateString) => {
         if (!dateString) {
             return ' ';
@@ -94,42 +128,31 @@ function OutboundCallsPage() {
 
     const downloadExcel = () => {
         const headers = [
-            'S.N.', 'Call Date/Time', 'Call-Type', 'OverAll-Call-Status', 'Agent-Name', 'Agent-Number', 'Customer-Number', 'Customer-Name', 'Date', 'Time', 'Caller-Operator-Name', 'Caller-Circle-Name',
-            'Client-Correlation-Id', 'Caller-Id-Type', 'Caller-Id-Circle', 'Caller-Status', 'Caller-Duration', 'Start-Time', 'End-Time', 'Duration', 'OverAll-Call-Duration', 'Conversation-Duration',
-            'Destination-Operator-Name', 'Destination-Circle-Name', 'Destination-Name', 'Destination-Status', 'Destination-Number', 'From-Waiting-Time', 'Participant-Address',
-            'Participant-Number-Type', 'HangUp-Cause'
+            'S.N.', 'Call Date/Time', 'Call-Type', 'Call-Status', 'OverAll-Call-Status', 'Agent-Name', 'Agent-Number', 'Customer-Number', 'Date', 'Time', 'Caller-Circle-Name',
+            'Destination-Circle-Name', 'Start-Time', 'End-Time', 'Duration', 'OverAll-Call-Duration', 'Talk-Time', 'Conversation-Duration',
+            'Destination-Number', 'From-Waiting-Time', 'HangUp-Cause'
         ];
         const dataWithHeaders = cdrData.map((cdr, index) => ({
             'S.N.': index + 1,
             'Call Date/Time': formatDate(cdr.timestamp),
             'Call-Type': cdr.Call_Type,
+            'Call-Status': cdr.Caller_Status,
             'OverAll-Call-Status': cdr.Overall_Call_Status,
             'Agent-Name': cdr.agentname,
             'Agent-Number': cdr.agentmobile,
-            'Customer-Number': cdr.customer_number,
-            'Customer-Name': cdr.Customer_Name,
+            'Customer-Number': cdr.Destination_Number,
             'Date': cdr.date,
             'Time': cdr.Time,
-            'Caller-Operator-Name': cdr.Caller_Operator_Name,
             'Caller-Circle-Name': cdr.Caller_Circle_Name,
-            'Client-Correlation-Id': cdr.Client_Correlation_Id,
-            'Caller-Id-Type': cdr.calleridType,
-            'Caller-Id-Circle': cdr.callerIdCircle,
-            'Caller-Status': cdr.Caller_Status,
-            'Caller-Duration': cdr.Caller_Duration,
-            'Start-Time': cdr.startTime,
-            'End-Time': cdr.endTime,
-            'Duration': cdr.duration,
-            'OverAll-Call-Duration': cdr.Overall_Call_Duration,
-            'Conversation-Duration': cdr.conversationDuration,
-            'Destination-Operator-Name': cdr.Destination_Operator_Name,
             'Destination-Circle-Name': cdr.Destination_Circle_Name,
-            'Destination-Name': cdr.Destination_Name,
-            'Destination-Status': cdr.Destination_Status,
+            'Start-Time': formatEpochToTime(cdr.startTime),
+            'End-Time': formatEpochToTime(cdr.endTime),
+            'Duration': formatDuration(cdr.duration),
+            'OverAll-Call-Duration': formatTime(cdr.Overall_Call_Duration),
+            'Talk-Time': formatTime(cdr.Caller_Duration),
+            'Conversation-Duration': formatDuration(cdr.conversationDuration),
             'Destination-Number': cdr.Destination_Number,
-            'From-Waiting-Time': cdr.fromWaitingTime,
-            'Participant-Address': cdr.participantAddress,
-            'Participant-Number-Type': cdr.participantNumberType,
+            'From-Waiting-Time': formatDuration(cdr.fromWaitingTime),
             'HangUp-Cause': cdr.Hangup_Cause
 
 
@@ -179,6 +202,9 @@ function OutboundCallsPage() {
                 {cdrData.length > 0 && (
                     <div className="total-records_container">
                         <p className='total_records'>Total Records: {cdrData.length}</p>
+                        <button onClick={fetchCdrData} className='cdr_refresh_btn'>
+                            <i className="fa fa-refresh"></i> Refresh
+                        </button>
                     </div>
                 )}
 
@@ -252,43 +278,31 @@ function OutboundCallsPage() {
                 )}
 
                 {cdrData.length > 0 && (
-                   <table className={modalOpen ? 'blurred' : 'cdr_table'}>
+                    <table className={modalOpen ? 'blurred' : 'cdr_table'}>
                         <thead>
                             <tr>
                                 <th>S.N.</th>
                                 <th>Call Date/Time</th>
                                 <th>Call-Type</th>
+                                <th>Call-Status</th>
                                 <th>OverAll-Call-Status</th>
                                 <th>Agent-Name</th>
                                 <th>Agent-Number</th>
                                 <th>Customer-Number</th>
-                                <th>Customer-Name</th>
                                 <th>Date</th>
                                 <th>Time</th>
-                                <th>Caller-Oprator-Name</th>
                                 <th>Caller-Circle-Name</th>
-                                <th>Client-Correlation-Id</th>
-                                <th>Caller-Id-Type</th>
-                                <th>Caller-Id-Circle</th>
-                                <th>Caller-Status</th>
-                                <th>Caller-Duration</th>
+                                <th>Destination-Circle-Name</th>
                                 <th>Start-Time</th>
                                 <th>End-Time</th>
                                 <th>Duration</th>
                                 <th>OverAll-Call-Duration</th>
+                                <th>Talk-Time</th>
                                 <th>Conversation-Duration</th>
-                                <th>Destination-Operator-Name</th>
-                                <th>Destination-Circle-Name</th>
-                                <th>Destination-Name</th>
-                                <th>Destination-Status</th>
                                 <th>Destination-Number</th>
                                 <th>From-Waiting-Time</th>
-                                <th>Participant-Address</th>
-                              
-                                <th>Participant-Number-Type</th>
-                                <th>Recording...</th>
                                 <th>HangUp-Cause</th>
-
+                                <th>Recording...</th>
                             </tr>
                         </thead>
                         <tbody className='cdr_tbody'>
@@ -297,38 +311,27 @@ function OutboundCallsPage() {
                                     <td>{index + 1}</td>
                                     <td>{formatDate(cdr.timestamp)}</td>
                                     <td>{cdr.Call_Type}</td>
+                                    <td>{cdr.Caller_Status}</td>
                                     <td>{cdr.Overall_Call_Status}</td>
                                     <td>{cdr.agentname}</td>
                                     <td>{cdr.agentmobile}</td>
                                     <td>{cdr.Destination_Number}</td>
-                                    <td>{cdr.Customer_Name}</td>
                                     <td>{cdr.date}</td>
                                     <td>{cdr.Time}</td>
-                                    <td>{cdr.Caller_Operator_Name}</td>
                                     <td>{cdr.Caller_Circle_Name}</td>
-                                    <td>{cdr.Client_Correlation_Id}</td>
-                                    <td>{cdr.calleridType}</td>
-                                    <td>{cdr.callerIdCircle}</td>
-                                    <td>{cdr.Caller_Status}</td>
-                                    <td>{cdr.Caller_Duration}</td>
-                                    <td>{cdr.startTime}</td>
-                                    <td>{cdr.endTime}</td>
-                                    <td>{cdr.duration}</td>
-                                    <td>{cdr.Overall_Call_Duration}</td>
-                                    <td>{cdr.conversationDuration}</td>
-                                    <td>{cdr.Destination_Operator_Name}</td>
                                     <td>{cdr.Destination_Circle_Name}</td>
-                                    <td>{cdr.Destination_Name}</td>
-                                    <td>{cdr.Destination_Status}</td>
+                                    <td>{formatEpochToTime(cdr.startTime)}</td>
+                                    <td>{formatEpochToTime(cdr.endTime)}</td>
+                                    <td>{formatDuration(cdr.duration)}</td>
+                                    <td>{formatTime(cdr.Overall_Call_Duration)}</td>
+                                    <td>{formatTime(cdr.Caller_Duration)}</td>
+                                    <td>{formatDuration(cdr.conversationDuration)}</td>
                                     <td>{cdr.Destination_Number}</td>
-                                    <td>{cdr.fromWaitingTime}</td>
-                                    <td>{cdr.participantAddress}</td>
-                                  
-                                    <td>{cdr.participantNumberType}</td>
+                                    <td>{formatDuration(cdr.fromWaitingTime)}</td>
+                                    <td>{cdr.Hangup_Cause}</td>
                                     <td onClick={() => handleRecordingClick(cdr.Recording)} className='custom_recording'>
                                         {cdr.Recording}
                                     </td>
-                                    <td>{cdr.Hangup_Cause}</td>
                                 </tr>
                             ))}
                         </tbody>

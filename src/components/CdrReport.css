@@ -16,6 +16,14 @@
   color: red;
 }
 
+.cdr_refresh_btn {
+  margin-top: 10px;
+  padding: 3px;
+  color: #303474;
+  /* border-radius: 2px; */
+  /* border: none; */
+}
+
 .date-input-container {
   display: flex;
   justify-content: center;
