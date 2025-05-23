@@ -51,12 +51,14 @@ input[type="date"] {
 }
 
 .dwldbtn_backsss {
-  padding: 8px 20px;
+  padding: 8px 10px;
+  height: 35px;
   font-size: 16px;
   background-color: #fff;
   color: #38346c;
   border: 1.5px solid #ffa444;
   border-radius: 5px;
+  margin-top: 12px;
 }
 
 .dwldbtn_backsss:hover {
@@ -255,7 +257,7 @@ td:nth-child(22) {
   overflow-x: auto;
   overflow-y: auto;
   display: block;
-  max-height: 740px;
+  max-height: 705px;
 }
 
 .no-data-message {
