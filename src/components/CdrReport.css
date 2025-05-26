@@ -50,6 +50,16 @@ input[type="date"] {
   margin-top: 10px;
 }
 
+.cdr__dwldbtn {
+  height: 35px;
+  margin-top: 12px;
+  font-size: 16px;
+  background-color: #ffa444;
+  border: none;
+  border-radius: 5px;
+  color: #38346c;
+}
+
 .dwldbtn_backsss {
   padding: 8px 10px;
   height: 35px;
@@ -85,6 +95,10 @@ input[type="date"] {
 }
 
 .cdr_back_dwldbtn:hover {
+  box-shadow: 0 2px 4px #af9d8a;
+}
+
+.cdr__dwldbtn:hover {
   box-shadow: 0 2px 4px #af9d8a;
 }
 
@@ -1076,11 +1090,23 @@ td:nth-child(22) {
   }
 
   .cdr_table {
-    max-height: 380px;
+    max-height: 320px;
   }
 
   .page_heading {
     font-size: 16px;
+  }
+
+  .inboundpage_heading {
+    font-size: 18px;
+  }
+
+  .outboundpage_heading {
+    font-size: 18px;
+  }
+
+  .missedpage_heading {
+    font-size: 18px;
   }
 
   thead th {
@@ -1103,6 +1129,11 @@ td:nth-child(22) {
     height: 30px;
     width: 60px;
     margin: 0px 0px 0px 0px;
+  }
+
+  .cdr__dwldbtn {
+    height: 35px;
+    margin-top: 12px;
   }
 
   .cdr_back_dwldbtn {

@@ -675,60 +675,113 @@ const AgentPage = () => {
     setEndDate(localDate);
   }, []);
 
+  const fetchAgents = async () => {
+    if (!managerId) {
+      setError('Manager ID is missing');
+      setLoading(false);
+      return;
+    }
+    try {
+      const response = await fetch(`${API_URL}/agents/${managerId}`);
+      if (!response.ok) {
+        throw new Error('Failed to fetch agents');
+      }
+
+      const allAgents = await response.json();
+      const formattedStartDate = `${startDate} ${startTime}`;
+      const formattedEndDate = `${endDate} ${endTime}`;
+
+      const callDataResponse = await fetch(`${API_URL}/agents/${managerId}?start_date=${formattedStartDate}&end_date=${formattedEndDate}`);
+      if (!callDataResponse.ok) {
+        throw new Error('Failed to fetch call data for the selected range');
+      }
+
+      const callData = await callDataResponse.json();
+      const callDataMap = new Map();
+      callData.agents.forEach(agent => {
+        callDataMap.set(agent.agentmobile, agent);
+      });
+
+      const mergedAgents = allAgents.agents.map(agent => {
+        const callStats = callDataMap.get(agent.agentmobile) || {};
+        return {
+          ...agent,
+          totalCalls: callStats.totalCalls || 0,
+          totaloutbound: callStats.totaloutbound || 0,
+          totalinbound: callStats.totalinbound || 0,
+          totalMissed: callStats.totalMissed || 0,
+          totalUnique: callStats.totalUnique || 0
+        };
+      });
+
+      setAgents(mergedAgents);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   useEffect(() => {
     if (!managerId || !startDate || !endDate) return;
-    const fetchAgents = async () => {
-      if (!managerId) {
-        setError('Manager ID is missing');
-        setLoading(false);
-        return;
-      }
-      try {
-        const response = await fetch(`${API_URL}/agents/${managerId}`);
-        if (!response.ok) {
-          throw new Error('Failed to fetch agents');
-        }
-
-        const allAgents = await response.json();
-
-
-        const formattedStartDate = `${startDate} ${startTime}`;
-        const formattedEndDate = `${endDate} ${endTime}`;
-
-        const callDataResponse = await fetch(`${API_URL}/agents/${managerId}?start_date=${formattedStartDate}&end_date=${formattedEndDate}`);
-        if (!callDataResponse.ok) {
-          throw new Error('Failed to fetch call data for the selected range');
-        }
-
-        const callData = await callDataResponse.json();
-
-        const callDataMap = new Map();
-        callData.agents.forEach(agent => {
-          callDataMap.set(agent.agentmobile, agent);
-        });
-
-        const mergedAgents = allAgents.agents.map(agent => {
-          const callStats = callDataMap.get(agent.agentmobile) || {};
-          return {
-            ...agent,
-            totalCalls: callStats.totalCalls || 0,
-            totaloutbound: callStats.totaloutbound || 0,
-            totalinbound: callStats.totalinbound || 0,
-            totalMissed: callStats.totalMissed || 0,
-            totalUnique: callStats.totalUnique || 0
-          };
-        });
-
-        setAgents(mergedAgents);
-      } catch (err) {
-        setError(err.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-
     fetchAgents();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [managerId, startDate, endDate, startTime, endTime]);
+
+  // useEffect(() => {
+  //   if (!managerId || !startDate || !endDate) return;
+  //   const fetchAgents = async () => {
+  //     if (!managerId) {
+  //       setError('Manager ID is missing');
+  //       setLoading(false);
+  //       return;
+  //     }
+  //     try {
+  //       const response = await fetch(`${API_URL}/agents/${managerId}`);
+  //       if (!response.ok) {
+  //         throw new Error('Failed to fetch agents');
+  //       }
+
+  //       const allAgents = await response.json();
+
+
+  //       const formattedStartDate = `${startDate} ${startTime}`;
+  //       const formattedEndDate = `${endDate} ${endTime}`;
+
+  //       const callDataResponse = await fetch(`${API_URL}/agents/${managerId}?start_date=${formattedStartDate}&end_date=${formattedEndDate}`);
+  //       if (!callDataResponse.ok) {
+  //         throw new Error('Failed to fetch call data for the selected range');
+  //       }
+
+  //       const callData = await callDataResponse.json();
+
+  //       const callDataMap = new Map();
+  //       callData.agents.forEach(agent => {
+  //         callDataMap.set(agent.agentmobile, agent);
+  //       });
+
+  //       const mergedAgents = allAgents.agents.map(agent => {
+  //         const callStats = callDataMap.get(agent.agentmobile) || {};
+  //         return {
+  //           ...agent,
+  //           totalCalls: callStats.totalCalls || 0,
+  //           totaloutbound: callStats.totaloutbound || 0,
+  //           totalinbound: callStats.totalinbound || 0,
+  //           totalMissed: callStats.totalMissed || 0,
+  //           totalUnique: callStats.totalUnique || 0
+  //         };
+  //       });
+
+  //       setAgents(mergedAgents);
+  //     } catch (err) {
+  //       setError(err.message);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
+
+  //   fetchAgents();
+  // }, [managerId, startDate, endDate, startTime, endTime]);
 
 
   const handleAgentClick = (agentName) => {
@@ -744,7 +797,7 @@ const AgentPage = () => {
     let totalOutbound = 0;
     let totalInbound = 0;
     let totalMissed = 0;
-    let totalUnique =0;
+    let totalUnique = 0;
 
 
     agents.forEach(agent => {
@@ -799,7 +852,7 @@ const AgentPage = () => {
       'Total Outbound Calls': safeNumber(agent.totaloutbound),
       'Total Inbound Calls': safeNumber(agent.totalinbound),
       'Total Missed Calls': safeNumber(agent.totalMissed),
-      'Total Unique Calls' : safeNumber(totals.totalUnique)
+      'Total Unique Calls': safeNumber(totals.totalUnique)
     }));
 
     const totalRow = {
@@ -815,7 +868,7 @@ const AgentPage = () => {
       'Total Outbound Calls': safeNumber(totals.totalOutbound),
       'Total Inbound Calls': safeNumber(totals.totalInbound),
       'Total Missed Calls': safeNumber(totals.totalMissed),
-      'Total Unique Calls' : safeNumber(totals.totalUnique)
+      'Total Unique Calls': safeNumber(totals.totalUnique)
     };
     const sheetData = [dateTimeRow, blankRow, headers, ...dataWithHeaders.map(row => Object.values(row)),
       Object.values(totalRow)];
@@ -876,6 +929,9 @@ const AgentPage = () => {
         </div>
 
         <div className='buttons_container_create_agent'>
+          <button onClick={fetchAgents} className='cdr_refresh_btn'>
+            <i className="fa fa-refresh"></i> Refresh
+          </button>
           <NavLink to="/addagent">
             <button className='agent_back'>Create Agent</button>
           </NavLink>
