@@ -120,19 +120,19 @@ function SingleTimeNo() {
         return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
     }
 
-    function formatTime(timeStr) {
-        const parts = timeStr.split(":");
-        if (parts.length === 2) {
-            const minutes = parseInt(parts[0], 10);
-            const seconds = parseInt(parts[1], 10);
+    // function formatTime(timeStr) {
+    //     const parts = timeStr.split(":");
+    //     if (parts.length === 2) {
+    //         const minutes = parseInt(parts[0], 10);
+    //         const seconds = parseInt(parts[1], 10);
 
-            const hours = Math.floor(minutes / 60);
-            const remainingMinutes = minutes % 60;
+    //         const hours = Math.floor(minutes / 60);
+    //         const remainingMinutes = minutes % 60;
 
-            return `${String(hours).padStart(2, "0")}:${String(remainingMinutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
-        }
-        return timeStr;
-    }
+    //         return `${String(hours).padStart(2, "0")}:${String(remainingMinutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+    //     }
+    //     return timeStr;
+    // }
 
 
     function formatEpochToTime(epochTime) {
@@ -161,9 +161,9 @@ function SingleTimeNo() {
 
     const downloadExcel = () => {
         const headers = [
-            'S.N.', 'Call Date/Time', 'Call-Type', 'Call-Status', 'OverAll-Call-Status', 'Agent-Name', 'Agent-Number', 'Customer-Number', 'Date', 'Time', 'Caller-Circle-Name',
-            'Destination-Circle-Name', 'Start-Time', 'End-Time', 'Duration', 'OverAll-Call-Duration', 'Talk-Time', 'Conversation-Duration',
-            'Destination-Number', 'From-Waiting-Time', 'HangUp-Cause'
+            'S.N.', 'Call Date/Time', 'Call-Type', 'Call-Status', 'OverAll-Call-Status', 'Agent-Name', 'Agent-Number', 'Customer-Number', 'Caller-Circle-Name',
+            'Destination-Circle-Name', 'Start-Time', 'End-Time', 'Duration', 'Conversation-Duration',
+            'Destination-Number', 'HangUp-Cause'
         ];
         const dataWithHeaders = cdrData.map((cdr, index) => ({
             'S.N.': index + 1,
@@ -174,18 +174,16 @@ function SingleTimeNo() {
             'Agent-Name': cdr.agentname,
             'Agent-Number': cdr.agentmobile,
             'Customer-Number': cdr.customer_number,
-            'Date': cdr.date,
-            'Time': cdr.Time,
+
             'Caller-Circle-Name': cdr.Caller_Circle_Name,
             'Destination-Circle-Name': cdr.Destination_Circle_Name,
             'Start-Time': formatEpochToTime(cdr.startTime),
             'End-Time': formatEpochToTime(cdr.endTime),
             'Duration': formatDuration(cdr.duration),
-            'OverAll-Call-Duration': formatTime(cdr.Overall_Call_Duration),
-            'Talk-Time': formatTime(cdr.Caller_Duration),
+
             'Conversation-Duration': formatDuration(cdr.conversationDuration),
             'Destination-Number': cdr.Destination_Number,
-            'From-Waiting-Time': formatDuration(cdr.fromWaitingTime),
+
             'HangUp-Cause': cdr.Hangup_Cause
 
         }));
@@ -193,7 +191,7 @@ function SingleTimeNo() {
         const ws = XLSX.utils.aoa_to_sheet(sheetData);
         const wb = XLSX.utils.book_new();
         XLSX.utils.book_append_sheet(wb, ws, 'CDR Data');
-        XLSX.writeFile(wb, 'OnetimeNumberCDR.xlsx');
+        XLSX.writeFile(wb, 'UniqueCDR.xlsx');
     };
 
     const handleBack = () => {
@@ -357,18 +355,16 @@ function SingleTimeNo() {
                                 <th>Agent-Name</th>
                                 <th>Agent-Number</th>
                                 <th>Customer-Number</th>
-                                <th>Date</th>
-                                <th>Time</th>
+
                                 <th>Caller-Circle-Name</th>
                                 <th>Destination-Circle-Name</th>
                                 <th>Start-Time</th>
                                 <th>End-Time</th>
                                 <th>Duration</th>
-                                <th>OverAll-Call-Duration</th>
-                                <th>Talk-Time</th>
+
                                 <th>Conversation-Duration</th>
                                 <th>Destination-Number</th>
-                                <th>From-Waiting-Time</th>
+
                                 <th>HangUp-Cause</th>
                                 <th>Recording...</th>
                             </tr>
@@ -384,18 +380,16 @@ function SingleTimeNo() {
                                     <td>{cdr.agentname}</td>
                                     <td>{cdr.agentmobile}</td>
                                     <td>{cdr.customer_number}</td>
-                                    <td>{cdr.date}</td>
-                                    <td>{cdr.Time}</td>
+
                                     <td>{cdr.Caller_Circle_Name}</td>
                                     <td>{cdr.Destination_Circle_Name}</td>
                                     <td>{formatEpochToTime(cdr.startTime)}</td>
                                     <td>{formatEpochToTime(cdr.endTime)}</td>
                                     <td>{formatDuration(cdr.duration)}</td>
-                                    <td>{formatTime(cdr.Overall_Call_Duration)}</td>
-                                    <td>{formatTime(cdr.Caller_Duration)}</td>
+
                                     <td>{formatDuration(cdr.conversationDuration)}</td>
                                     <td>{cdr.Destination_Number}</td>
-                                    <td>{formatDuration(cdr.fromWaitingTime)}</td>
+
                                     <td>{cdr.Hangup_Cause}</td>
                                     <td onClick={() => handleRecordingClick(cdr.Recording)} className='custom_recording'>
                                         {cdr.Recording}
