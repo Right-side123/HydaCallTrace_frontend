@@ -129,8 +129,8 @@ function InboundCallsPage() {
 
     const downloadExcel = () => {
         const headers = [
-            'S.N.', 'Call Date/Time', 'Call-Type', 'Call-Status', 'OverAll-Call-Status', 'Agent-Name', 'Agent-Number', 'Customer-Number','Caller-Circle-Name',
-            'Destination-Circle-Name', 'Start-Time', 'End-Time', 'Duration','Conversation-Duration',
+            'S.N.', 'Call Date/Time', 'Call-Type', 'Call-Status', 'Agent-Name', 'Agent-Number', 'Customer-Number','Caller-Circle-Name',
+            'Destination-Circle-Name', 'Start-Time', 'End-Time', 'Duration','Talk-Time',
             'Destination-Number','HangUp-Cause'
         ];
         const dataWithHeaders = cdrData.map((cdr, index) => ({
@@ -138,7 +138,6 @@ function InboundCallsPage() {
             'Call Date/Time': formatDate(cdr.timestamp),
             'Call-Type': cdr.Call_Type,
             'Call-Status': cdr.Caller_Status,
-            'OverAll-Call-Status': cdr.Overall_Call_Status,
             'Agent-Name': cdr.agentname,
             'Agent-Number': cdr.agentmobile,
             'Customer-Number': cdr.Caller_Number,
@@ -147,7 +146,7 @@ function InboundCallsPage() {
             'Start-Time': formatEpochToTime(cdr.startTime),
             'End-Time': formatEpochToTime(cdr.endTime),
             'Duration': formatDuration(cdr.duration),
-            'Conversation-Duration': formatDuration(cdr.conversationDuration),
+            'Talk-Time': formatDuration(cdr.conversationDuration),
             'Destination-Number': cdr.Destination_Number,
             'HangUp-Cause': cdr.Hangup_Cause
 
@@ -279,7 +278,6 @@ function InboundCallsPage() {
                                 <th>Call Date/Time</th>
                                 <th>Call-Type</th>
                                 <th>Call-Status</th>
-                                <th>OverAll-Call-Status</th>
                                 <th>Agent-Name</th>
                                 <th>Agent-Number</th>
                                 <th>Customer-Number</th>
@@ -288,7 +286,7 @@ function InboundCallsPage() {
                                 <th>Start-Time</th>
                                 <th>End-Time</th>
                                 <th>Duration</th>
-                                <th>Conversation-Duration</th>
+                                <th>Talk-Time</th>
                                 <th>Destination-Number</th>
                                 <th>HangUp-Cause</th>
                                 <th>Recording...</th>
@@ -301,7 +299,6 @@ function InboundCallsPage() {
                                     <td>{formatDate(cdr.timestamp)}</td>
                                     <td>{cdr.Call_Type}</td>
                                     <td>{cdr.Caller_Status}</td>
-                                    <td>{cdr.Overall_Call_Status}</td>
                                     <td>{cdr.agentname}</td>
                                     <td>{cdr.agentmobile}</td>
                                     <td>{cdr.Caller_Number}</td>
