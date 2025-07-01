@@ -101,7 +101,7 @@ const Header = () => {
               <div className='location_details'>
                 <img src={locationicon} alt='address' className='location_icon' />
                 <span className='contact_details'>10th Floor, Aston tower, Sundervan Complex, <br />
-                  Shashtri Nagar, Andheri West, Mumbai, 4000053, <br />
+                  Shashtri Nagar, Andheri West, Mumbai, 400053, <br />
                   Maharashtra, India.</span><br />
               </div>
               <div>
